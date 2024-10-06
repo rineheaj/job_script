@@ -9,8 +9,7 @@ if 'job_data' not in st.session_state:
         "Applied Date": [],
         "Status": [],
         "Company": [],
-        "Position": [],
-        "Website URL": []
+        "Position": []
     }
 
 def create_job_table():
@@ -58,7 +57,7 @@ styled_df = (
     .map(lambda x: 'background-color: gray;', subset=['Company'])
     .map(lambda x: 'background-color: darkcyan;', subset=['Position'])
     .map(status_color, subset=['Status'])
-    .map(lambda x: 'background-color: purple;', subset=['Website URL'])
+    # .map(lambda x: 'background-color: purple;', subset=['Website URL'])
     .map(lambda x: 'background-color: darkgreen;', subset=['Applied Date'])
 )
 
@@ -74,7 +73,7 @@ st.sidebar.subheader("➕ Add New Job Application")
 company = st.sidebar.text_input("Company")
 position = st.sidebar.text_input("Position")
 status = st.sidebar.selectbox("Status", ['Applied', 'Interviewing', 'Offer', 'Rejected'])
-website_url = st.sidebar.text_input('Website URL')
+# website_url = st.sidebar.text_input('Website URL')
 applied_date = st.sidebar.date_input('Applied Date')
 
 # ADD JOB BUTTON
@@ -82,9 +81,9 @@ if st.sidebar.button("Add Job"):
     st.session_state['job_data']['Company'].append(company)
     st.session_state['job_data']['Position'].append(position)
     st.session_state['job_data']['Status'].append(status)
-    st.session_state['job_data']['Website URL'].append(website_url)
+    # st.session_state['job_data']['Website URL'].append(website_url)
     st.session_state['job_data']['Applied Date'].append(applied_date)
-    st.success(f'Job added: {company} - {position} - {status} - {website_url}')
+    st.success(f'Job added: {company} - {position} - {status}')
 
 #UPDATE JOB STATUS
 st.sidebar.subheader('🔄 Update Job Status')
@@ -125,7 +124,7 @@ chart = alt.Chart(df).mark_bar().encode(
     x='Company',
     y='count()',
     color='Status',
-    tooltip=['Company', 'Position', 'Status', 'Website URL']
+    tooltip=['Company', 'Position', 'Status']
 ).properties(title='Job Application Status')
 st.altair_chart(chart)
 
@@ -134,7 +133,7 @@ chart2 = alt.Chart(df).mark_bar().encode(
     x='Status',
     y='count()',
     color='Status',
-    tooltip=['Company', 'Position', 'Status', 'Website URL']
+    tooltip=['Company', 'Position', 'Status']
 ).properties(title='Job Application Status')
 st.altair_chart(chart2)
 
