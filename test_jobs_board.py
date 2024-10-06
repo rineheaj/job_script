@@ -143,7 +143,7 @@ if st.sidebar.button('Delete a Job'):
     st.success(f'Job "{job_to_del}" deleted')
 
 
-pie_chart, bar_chart1, bar_chart2 = create_charts()
+pie_chart, bar_chart1, bar_chart2 = create_charts(df=df)
 display_charts(pie_chart, bar_chart1, bar_chart2)
 
 
