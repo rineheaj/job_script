@@ -39,12 +39,21 @@ def commit_to_github(data):
 
     response = requests.get(url=url, headers=headers)
     response_json = response.json()
-    sha = response_json['sha']
     
-    #B64ENCODED
+    # Print the JSON response for debugging
+    print(response_json)
+    
+    # Check if 'sha' key exists in the response
+    if 'sha' in response_json:
+        sha = response_json['sha']
+    else:
+        st.error('SHA key not found in the response.')
+        return
+    
+    # B64ENCODED
     content = base64.b64encode(
-        json.dumps(data).encode('utf-8').decode('utf-8')
-    )
+        json.dumps(data).encode('utf-8')
+    ).decode('utf-8')
 
     commit_data = {
         'message': f'Update job data {datetime.now().isoformat()}',
@@ -59,6 +68,7 @@ def commit_to_github(data):
         st.success('Changes committed to GitHub successfully')
     else:
         st.error('Failed to commit changes to GitHub.')
+
     
 # CREATE DATA STRUCTURE
 if 'job_data' not in st.session_state:
@@ -70,8 +80,6 @@ def create_job_table():
     """
     df = pd.DataFrame(st.session_state['job_data'])
     return df
-
-
 
 # SET TITLE
 def set_title():
@@ -87,6 +95,7 @@ def set_title():
     )
     return title
 
+title = set_title()
 st.subheader("📋 Job Applications:")
 
 # CREATE DF 
