@@ -158,7 +158,7 @@ chart2 = alt.Chart(df).mark_bar().encode(
     y='count()',
     color='Status',
     tooltip=['Company', 'Position', 'Status']
-).properties(title='Job Application Status')
+)
 st.altair_chart(chart2)
 
 
