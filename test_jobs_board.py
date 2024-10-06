@@ -49,7 +49,7 @@ main_title = set_title()
 
 title2 = st.markdown(
     '''
-    <style>.title {text-align: center; padding: 40px;}
+    <style> .title {text-align: center; padding: 40px;}
     </style>
 
     <h1 class="title2">📋 Job Applications</h1>
