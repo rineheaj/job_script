@@ -2,6 +2,12 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import json
+import requests
+from datetime import datetime
+
+GITHUB_REPO = st.secrets['github']['repo']
+GITHUB_FILE_PATH = st.secrets['github']['file_path']
+GITHUB_TOKEN = st.secrets['github']['token']
 
 
 ##LOAD DATA
@@ -18,6 +24,32 @@ def save_json_data(data):
     with open('job_data.json', 'w') as f:
         json.dump(data, f, indent=4)
 
+
+def commit_to_github(data):
+    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}'
+    headers = {
+        'Authorization': f'token {GITHUB_TOKEN}',
+        'Content-Type': 'application/json'
+    }
+
+    response = requests.get(url=url, headers=headers)
+    response_json = response.json()
+    sha = response_json['sha']
+
+    commit_data = {
+        'message': f'Update job data {datetime.now().isoformat()}',
+        'content': json.dumps(data).encode('utf-8'),
+        'sha': sha
+    }
+    response = requests.put(url, 
+                            headers=headers, 
+                            data=json.dumps(commit_data)
+    )
+    if response.status_code == 200:
+        st.success('Changes committed to GitHub successfully')
+    else:
+        st.error('Failed to commit changes to GitHub.')
+    
 # CREATE DATA STRUCTURE
 if 'job_data' not in st.session_state:
     st.session_state['job_data'] = load_json_data()
@@ -32,16 +64,19 @@ def create_job_table():
 
 
 # SET TITLE
-st.markdown(
-    """
-    <style>
-    .title {text-align: center; padding: 20px;}
-    </style>
-    
-    <h1 class="title">🎯 Job Application Tracker</h1>
-    """,
-    unsafe_allow_html=True
-)
+def set_title():
+    title = st.markdown(
+        """
+        <style>
+        .title {text-align: center; padding: 20px;}
+        </style>
+        
+        <h1 class="title">🎯 Job Application Tracker</h1>
+        """,
+        unsafe_allow_html=True
+    )
+    return title
+
 st.subheader("📋 Job Applications:")
 
 # CREATE DF 
@@ -122,8 +157,7 @@ job_to_del = st.sidebar.selectbox(
 
 if st.sidebar.button('Delete a Job'):
     i_to_del = df[df['Position'] == job_to_del].index[0]
-    for key in st.session_state['job_data']:
-        st.session_state['job_data'][key].pop(i_to_del)
+    st.session_state['job_data'].pop(i_to_del)
     save_json_data(st.session_state['job_data'])
     st.success(f'Job "{job_to_del}" deleted')
 
