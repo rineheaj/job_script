@@ -5,14 +5,12 @@ import json
 import requests
 from datetime import datetime
 import base64
-from dotenv import load_dotenv
-import os
+
 
 #LOAD ENV VARS
-load_dotenv()
-GITHUB_REPO = os.getenv('repo')
-GITHUB_FILE_PATH = os.getenv('file_path')
-GITHUB_TOKEN = os.getenv('token')
+GITHUB_REPO = st.secrets['github']['repo']
+GITHUB_FILE_PATH = st.secrets['github']['file_path']
+GITHUB_TOKEN = st.secrets['github']['token']
 
 
 
@@ -42,7 +40,8 @@ def commit_to_github(data):
     response = requests.get(url=url, headers=headers)
     response_json = response.json()
     sha = response_json['sha']
-
+    
+    #B64ENCODED
     content = base64.b64encode(
         json.dumps(data).encode('utf-8').decode('utf-8')
     )
