@@ -1,16 +1,24 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import json
 
+
+##LOAD DATA
+def load_json_data():
+    try:
+        with open('job_data.json', 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"Applied Date": [],
+                "Status": [],
+                "Company": [],
+                "Position": []
+        }
 
 # CREATE DATA STRUCTURE
 if 'job_data' not in st.session_state:
-    st.session_state['job_data'] = {
-        "Applied Date": [],
-        "Status": [],
-        "Company": [],
-        "Position": []
-    }
+    st.session_state['job_data'] = load_json_data()
 
 def create_job_table():
     """
