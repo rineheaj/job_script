@@ -17,7 +17,7 @@ def commit_to_github(data):
     response = requests.get(url=url, headers=headers)
     response_json = response.json()
     
-    # Check if 'sha' key exists in the response
+    
     if 'sha' in response_json:
         sha = response_json['sha']
     else:
