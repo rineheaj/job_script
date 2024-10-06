@@ -1,7 +1,7 @@
 import requests
 import json
 import base64
-from test_jobs_board import GITHUB_FILE_PATH, GITHUB_REPO, GITHUB_TOKEN
+from config import GITHUB_FILE_PATH, GITHUB_REPO, GITHUB_TOKEN
 import streamlit as st
 from datetime import datetime
 

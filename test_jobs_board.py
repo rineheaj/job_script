@@ -5,11 +5,6 @@ import json
 from github import commit_to_github
 
 
-#LOAD ENV VARS
-GITHUB_REPO = st.secrets['github']['repo']
-GITHUB_FILE_PATH = st.secrets['github']['file_path']
-GITHUB_TOKEN = st.secrets['github']['token']
-
 ##LOAD DATA
 def load_json_data():
     try:
