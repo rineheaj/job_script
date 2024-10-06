@@ -150,7 +150,7 @@ chart1 = alt.Chart(status_counts).mark_arc().encode(
     color=alt.Color(field="Status", type="nominal"),
     tooltip=['Status', 'Count']
 )
-st.altair_chart(chart1)
+# st.altair_chart(chart1)
 
 # CREATE TEST BAR CHART 1
 chart = alt.Chart(df).mark_bar().encode(
@@ -159,7 +159,8 @@ chart = alt.Chart(df).mark_bar().encode(
     color='Status',
     tooltip=['Company', 'Position', 'Status']
 )
-st.altair_chart(chart)
+# st.altair_chart(chart)
+
 
 # TEST BAR CHART 2
 chart2 = alt.Chart(df).mark_bar().encode(
@@ -168,7 +169,29 @@ chart2 = alt.Chart(df).mark_bar().encode(
     color='Status',
     tooltip=['Company', 'Position', 'Status']
 )
-st.altair_chart(chart2)
+# st.altair_chart(chart2)
+
+st.markdown(
+    '''
+    <style>
+    .center {display: flex; justify-content: center;}
+    </style>
+    ''',
+    unsafe_allow_html=True
+)
+
+st.markdown('<div class="center">', unsafe_allow_html=True)
+st.altair_chart(chart1, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
+
+st.markdown('<div class="center">', unsafe_allow_html=True)
+st.altair_chart(chart, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
+
+st.markdown('<div class="center">', unsafe_allow_html=True)
+st.altair_chart(chart2, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
