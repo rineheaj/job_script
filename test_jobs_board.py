@@ -4,10 +4,17 @@ import altair as alt
 import json
 import requests
 from datetime import datetime
+import base64
+from dotenv import load_dotenv
+import os
 
-GITHUB_REPO = st.secrets['github']['repo']
-GITHUB_FILE_PATH = st.secrets['github']['file_path']
-GITHUB_TOKEN = st.secrets['github']['token']
+#LOAD ENV VARS
+load_dotenv()
+GITHUB_REPO = os.getenv('repo')
+GITHUB_FILE_PATH = os.getenv('file_path')
+GITHUB_TOKEN = os.getenv('token')
+
+
 
 
 ##LOAD DATA
@@ -24,7 +31,7 @@ def save_json_data(data):
     with open('job_data.json', 'w') as f:
         json.dump(data, f, indent=4)
 
-
+#CONNECT TO GITHUB
 def commit_to_github(data):
     url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}'
     headers = {
@@ -36,9 +43,13 @@ def commit_to_github(data):
     response_json = response.json()
     sha = response_json['sha']
 
+    content = base64.b64encode(
+        json.dumps(data).encode('utf-8').decode('utf-8')
+    )
+
     commit_data = {
         'message': f'Update job data {datetime.now().isoformat()}',
-        'content': json.dumps(data).encode('utf-8'),
+        'content': content,
         'sha': sha
     }
     response = requests.put(url, 
