@@ -143,6 +143,7 @@ if st.sidebar.button("Add Job"):
     # st.session_state['job_data']['Website URL'].append(website_url)
     st.session_state['job_data'].append(new_job)
     save_json_data(st.session_state['job_data'])
+    commit_to_github(st.session_state['job_data'])
     st.success(f'Job added: {company} - {position} - {status}')
 
 
@@ -158,6 +159,7 @@ if st.sidebar.button("Update Status"):
     index_to_update = df[df['Position'] == job_to_update].index[0]
     st.session_state['job_data'][index_to_update]['Status'] = new_status
     save_json_data(st.session_state['job_data'])
+    commit_to_github(st.session_state['job_data'])
     st.success(f'Status updated for {job_to_update} to {new_status}')
 
 #DELETE JOB LISTING
@@ -170,6 +172,7 @@ if st.sidebar.button('Delete a Job'):
     i_to_del = df[df['Position'] == job_to_del].index[0]
     st.session_state['job_data'].pop(i_to_del)
     save_json_data(st.session_state['job_data'])
+    commit_to_github(st.session_state['job_data'])
     st.success(f'Job "{job_to_del}" deleted')
 
 # TEST PIE CHART
