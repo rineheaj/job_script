@@ -140,7 +140,7 @@ chart1 = alt.Chart(status_counts).mark_arc().encode(
     theta=alt.Theta(field="Count", type="quantitative"),
     color=alt.Color(field="Status", type="nominal"),
     tooltip=['Status', 'Count']
-).properties(title='Job Application Status')
+)
 st.altair_chart(chart1)
 
 # CREATE TEST BAR CHART 1
