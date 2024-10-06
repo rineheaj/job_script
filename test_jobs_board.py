@@ -110,6 +110,7 @@ new_status = st.sidebar.selectbox('New Status', [
 if st.sidebar.button("Update Status"):
     index_to_update = df[df['Position'] == job_to_update].index[0]
     st.session_state['job_data']['Status'][index_to_update] = new_status
+    save_json_data(st.session_state['job_data'])
     st.success(f'Status updated for {job_to_update} to {new_status}')
 
 #DELETE JOB LISTING
@@ -122,6 +123,7 @@ if st.sidebar.button('Delete a Job'):
     i_to_del = df[df['Position'] == job_to_del].index[0]
     for key in st.session_state['job_data']:
         st.session_state['job_data'][key].pop(i_to_del)
+    save_json_data(st.session_state['job_data'])
     st.success(f'Job "{job_to_del}" deleted')
 
 # TEST PIE CHART
