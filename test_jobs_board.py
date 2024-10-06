@@ -110,7 +110,7 @@ new_status = st.sidebar.selectbox('New Status', [
 
 if st.sidebar.button("Update Status"):
     index_to_update = df[df['Position'] == job_to_update].index[0]
-    st.session_state['job_data']['Status'][index_to_update] = new_status
+    st.session_state['job_data'][index_to_update]['Status'] = new_status
     save_json_data(st.session_state['job_data'])
     st.success(f'Status updated for {job_to_update} to {new_status}')
 
