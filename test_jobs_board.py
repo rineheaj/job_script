@@ -152,7 +152,7 @@ chart1 = alt.Chart(status_counts).mark_arc().encode(
 )
 # st.altair_chart(chart1)
 
-# CREATE TEST BAR CHART 1
+# CREATE TEST BAR CHART 
 chart = alt.Chart(df).mark_bar().encode(
     x='Company',
     y='count()',
@@ -171,6 +171,9 @@ chart2 = alt.Chart(df).mark_bar().encode(
 )
 # st.altair_chart(chart2)
 
+
+
+#CSS STYLE FOR CHARTS/GRAPHS
 st.markdown(
     '''
     <style>
@@ -180,6 +183,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+
+#DISPLAY CHARTS/GRAPHS WITH MARKDOWN/CSS APPLIED
 st.markdown('<div class="center">', unsafe_allow_html=True)
 st.altair_chart(chart1, use_container_width=True)
 st.markdown('</div>', unsafe_allow_html=True)
