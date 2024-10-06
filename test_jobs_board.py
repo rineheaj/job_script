@@ -16,6 +16,12 @@ def load_json_data():
                 "Position": []
         }
 
+
+#SAVE DATA
+def save_json_data(data):
+    with open('job_data.json', 'w') as f:
+        json.dump(data, f)
+
 # CREATE DATA STRUCTURE
 if 'job_data' not in st.session_state:
     st.session_state['job_data'] = load_json_data()
@@ -91,6 +97,7 @@ if st.sidebar.button("Add Job"):
     st.session_state['job_data']['Status'].append(status)
     # st.session_state['job_data']['Website URL'].append(website_url)
     st.session_state['job_data']['Applied Date'].append(applied_date)
+    save_json_data(st.session_state['job_data'])
     st.success(f'Job added: {company} - {position} - {status}')
 
 #UPDATE JOB STATUS
