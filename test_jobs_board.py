@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 import json
 from github import commit_to_github
-
+from charts import create_charts, display_charts
 
 ##LOAD DATA
 def load_json_data():
@@ -142,61 +142,9 @@ if st.sidebar.button('Delete a Job'):
     commit_to_github(st.session_state['job_data'])
     st.success(f'Job "{job_to_del}" deleted')
 
-# TEST PIE CHART
-status_counts = df['Status'].value_counts().reset_index()
-status_counts.columns = ['Status', 'Count']
-chart1 = alt.Chart(status_counts).mark_arc().encode(
-    theta=alt.Theta(field="Count", type="quantitative"),
-    color=alt.Color(field="Status", type="nominal"),
-    tooltip=['Status', 'Count']
-)
-# st.altair_chart(chart1)
 
-# CREATE TEST BAR CHART 
-chart = alt.Chart(df).mark_bar().encode(
-    x='Company',
-    y='count()',
-    color='Status',
-    tooltip=['Company', 'Position', 'Status']
-)
-# st.altair_chart(chart)
-
-
-# TEST BAR CHART 2
-chart2 = alt.Chart(df).mark_bar().encode(
-    x='Status',
-    y='count()',
-    color='Status',
-    tooltip=['Company', 'Position', 'Status']
-)
-# st.altair_chart(chart2)
-
-
-
-#CSS STYLE FOR CHARTS/GRAPHS
-st.markdown(
-    '''
-    <style>
-    .center {display: flex; justify-content: center;}
-    </style>
-    ''',
-    unsafe_allow_html=True
-)
-
-
-#DISPLAY CHARTS/GRAPHS WITH MARKDOWN/CSS APPLIED
-st.markdown('<div class="center">', unsafe_allow_html=True)
-st.altair_chart(chart1, use_container_width=True)
-st.markdown('</div>', unsafe_allow_html=True)
-
-st.markdown('<div class="center">', unsafe_allow_html=True)
-st.altair_chart(chart, use_container_width=True)
-st.markdown('</div>', unsafe_allow_html=True)
-
-st.markdown('<div class="center">', unsafe_allow_html=True)
-st.altair_chart(chart2, use_container_width=True)
-st.markdown('</div>', unsafe_allow_html=True)
-
+pie_chart, bar_chart1, bar_chart2 = create_charts()
+display_charts(pie_chart, bar_chart1, bar_chart2)
 
 
 
