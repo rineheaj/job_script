@@ -40,9 +40,6 @@ def commit_to_github(data):
     response = requests.get(url=url, headers=headers)
     response_json = response.json()
     
-    # Print the JSON response for debugging
-    print(response_json)
-    
     # Check if 'sha' key exists in the response
     if 'sha' in response_json:
         sha = response_json['sha']
@@ -86,7 +83,7 @@ def set_title():
     title = st.markdown(
         """
         <style>
-        .title {text-align: center; padding: 20px;}
+        .title {text-align: center; padding: 60px;}
         </style>
         
         <h1 class="title">🎯 Job Application Tracker</h1>
