@@ -2,18 +2,14 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import json
-import requests
 from datetime import datetime
-import base64
+from github import commit_to_github
 
 
 #LOAD ENV VARS
 GITHUB_REPO = st.secrets['github']['repo']
 GITHUB_FILE_PATH = st.secrets['github']['file_path']
 GITHUB_TOKEN = st.secrets['github']['token']
-
-
-
 
 ##LOAD DATA
 def load_json_data():
@@ -29,44 +25,7 @@ def save_json_data(data):
     with open('job_data.json', 'w') as f:
         json.dump(data, f, indent=4)
 
-#CONNECT TO GITHUB
-def commit_to_github(data):
-    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}'
-    headers = {
-        'Authorization': f'token {GITHUB_TOKEN}',
-        'Content-Type': 'application/json'
-    }
 
-    response = requests.get(url=url, headers=headers)
-    response_json = response.json()
-    
-    # Check if 'sha' key exists in the response
-    if 'sha' in response_json:
-        sha = response_json['sha']
-    else:
-        st.error('SHA key not found in the response.')
-        return
-    
-    # B64ENCODED
-    content = base64.b64encode(
-        json.dumps(data).encode('utf-8')
-    ).decode('utf-8')
-
-    commit_data = {
-        'message': f'Update job data {datetime.now().isoformat()}',
-        'content': content,
-        'sha': sha
-    }
-    response = requests.put(url, 
-                            headers=headers, 
-                            data=json.dumps(commit_data)
-    )
-    if response.status_code == 200:
-        st.success('Changes committed to GitHub successfully')
-    else:
-        st.error('Failed to commit changes to GitHub.')
-
-    
 # CREATE DATA STRUCTURE
 if 'job_data' not in st.session_state:
     st.session_state['job_data'] = load_json_data()
