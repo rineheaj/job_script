@@ -6,7 +6,10 @@ from charts import(
 )
 from config import set_title, set_table_title
 from style import style_df
-from data_utils import load_json_data, create_job_table
+from data_utils import(load_json_data, 
+                       create_job_table,
+                       applied_date_check
+)
 from sidebars import sidebar
 
 data = load_json_data()
@@ -21,7 +24,12 @@ table_title = set_table_title()
 
 #INIT DF
 df = create_job_table()
+
+df = applied_date_check(df=df)
+
 styled_df = style_df(df=df)
+
+
 
 # AUTO RESIZE DF
 st.dataframe(styled_df, use_container_width=True)
