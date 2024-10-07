@@ -6,7 +6,11 @@ from charts import (
     create_line_chart,
     create_stacked_area_chart,
 )
-from config import set_title, set_table_title
+from config import(
+    set_title, 
+    set_table_title,
+    set_title_w_param
+)
 from style import style_df
 from data_utils import (
     load_json_data,
@@ -20,8 +24,8 @@ data = load_json_data()
 if "job_data" not in st.session_state:
     st.session_state["job_data"] = load_json_data()
 
+##CHECK FOR SELECTED PAGE
 page = st.sidebar.selectbox("Select a page", ["Main Page", "Random"])
-
 if page == "Main Page":
 
     # SET TITLES
@@ -45,4 +49,5 @@ if page == "Main Page":
     display_charts(test_pie_chart, stacked_chart1)
 
 elif page == "Second Page":
+    set_title_w_param('🏢 Work In Progress')
     show_second_page()
