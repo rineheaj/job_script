@@ -25,7 +25,7 @@ table_title = set_table_title()
 #INIT DF
 df = create_job_table()
 
-# df = applied_date_check(df=df)
+df = applied_date_check(df=df)
 
 styled_df = style_df(df=df)
 
