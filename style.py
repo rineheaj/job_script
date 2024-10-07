@@ -17,7 +17,7 @@ def status_color(val):
 
 def style_df(df):
     styled_df = (
-        df.style.map(lambda x: "color: black;",subset=df.columns)
+        df.style.set_properties(**{'color': 'black'})
         .map(lambda x: "background-color: gray;", subset=["Company"])
         .map(lambda x: "background-color: darkcyan;", subset=["Position"])
         .map(status_color, subset=["Status"])
