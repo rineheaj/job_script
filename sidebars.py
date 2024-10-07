@@ -11,9 +11,49 @@ def check_used_mem():
     return used_mem
 
 def add_mem_button():
-    if st.sidebar.button('Check Memory Usage'):
+    st.markdown(
+        '''
+        <style>.orange-button {
+        orange;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        }
+        </style>
+        ''',
+        unsafe_allow_html=True 
+    )
+    if st.sidebar.button('Check Memory Usage', key='mem_button'):
         used_memory = check_used_mem()
-        st.info(f'Memory Usage: {used_memory:.2f} MB')
+        st.sidebar.info(f'Memory Usage: {used_memory:.2f} MB')
+
+    st.markdown(
+        '''
+        <style>
+        div.stButton > button:first-child {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2 px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        </style>
+        ''', 
+        unsafe_allow_html=True
+    )
 
 def refresh_page():
     if st.sidebar.button("Refresh Page"):
