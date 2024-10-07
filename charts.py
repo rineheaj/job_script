@@ -30,7 +30,7 @@ def create_charts(df):
     return chart1, chart, chart2
 
 def create_line_chart(df):
-    df['Applied Date'] = df['Applied Date'].strftime('%d-%m-%Y')
+    df['Applied Date'] = df['Applied Date'].dt.strftime('%Y-%m-%d')
     agg_df = df.groupby(
         [
             'Applied Date',
