@@ -5,21 +5,13 @@ import os
 from data_utils import save_json_data, create_new_job
 from github import commit_to_github
 
+
 def check_used_mem():
     process = psutil.Process(os.getpid())
     mem_info = process.memory_info()
     used_mem = mem_info.rss / (1024**2)
     return used_mem
 
-def show_alert_js_refresh():
-    components.html(
-        '''
-        <script>
-        alert('Page has been refreshed!');
-        </script>
-        ''',
-        height=0
-    )
 
 def add_mem_button():
     st.markdown(
@@ -43,20 +35,8 @@ def add_mem_button():
         unsafe_allow_html=True,
     )
 
-    # #A LITTLE JSCRIPT
-    # st.markdown(
-    #     '''
-    #     <script>
-    #     document.querySelectorAll('div.stButton button')
-    #     [1].classList.add('custom-button);
-    #     </script>
-    #     ''',
-    #     unsafe_allow_html=True
-    # )
-
     if st.sidebar.button("Check Memory Usage"):
         used_memory = check_used_mem()
-        show_alert_js_refresh()
         st.sidebar.info(f"Memory Usage: {used_memory:.2f} MB")
 
 
