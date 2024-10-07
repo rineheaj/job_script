@@ -25,11 +25,7 @@ table_title = set_table_title()
 
 #INIT DF
 df = create_job_table()
-
-
-
 styled_df = style_df(df=df)
-
 
 
 # AUTO RESIZE DF
