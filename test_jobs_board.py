@@ -13,7 +13,6 @@ def load_json_data():
     except FileNotFoundError:
         return []
 
-
 #SAVE DATA
 def save_json_data(data):
     with open('job_data.json', 'w') as f:
