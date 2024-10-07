@@ -40,6 +40,5 @@ line_chart1 = create_line_chart(df=df)
 stacked_chart1 = create_stacked_area_chart(df=df)
 display_charts(
     test_pie_chart, 
-    line_chart1,
     stacked_chart1
 )
