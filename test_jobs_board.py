@@ -1,25 +1,13 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
-import json
 from github import commit_to_github
 from charts import create_charts, display_charts
+from config import set_title, set_table_title
+from data_utils import load_json_data, save_json_data
+from style import status_color, style_df
 
 
-##LOAD DATA
-def load_json_data():
-    try:
-        with open("job_data.json", "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return []
-
-
-# SAVE DATA
-def save_json_data(data):
-    with open("job_data.json", "w") as f:
-        json.dump(data, f, indent=4)
-
+data = load_json_data()
 
 # CREATE DATA STRUCTURE
 if "job_data" not in st.session_state:
@@ -30,60 +18,16 @@ def create_job_table():
     df = pd.DataFrame(st.session_state["job_data"])
     return df
 
-
-# SET TITLE
-def set_title():
-    title = st.markdown(
-        """
-        <style>
-        .title {text-align: center; padding: 60px;}
-        </style>
-        
-        <h1 class="title">🎯 Job Application Tracker</h1>
-        """,
-        unsafe_allow_html=True,
-    )
-    return title
-
-
+#SET TITLE
 main_title = set_title()
 
-title2 = st.markdown(
-    """
-    <style> .title2 {text-align: center; padding: 25px;}
-    </style>
-
-    <h1 class="title2">📋 Job Applications</h1>
-    """,
-    unsafe_allow_html=True,
-)
+#TABLE TITLE
+table_title = set_table_title()
 
 # CREATE DF
 df = create_job_table()
 
-
-# COLORS FOR DF
-def status_color(val):
-    if val == "Offer":
-        return "background-color: green;"
-    elif val == "Rejected":
-        return "background-color: red;"
-    elif val == "Interviewing":
-        return "background-color: coral;"
-    elif val == "Applied":
-        return "background-color: blue;"
-    else:
-        return ""
-
-
-# DATAFRAME STYLES
-styled_df = (
-    df.style.map(lambda x: "background-color: gray;", subset=["Company"])
-    .map(lambda x: "background-color: darkcyan;", subset=["Position"])
-    .map(status_color, subset=["Status"])
-    # .map(lambda x: 'background-color: purple;', subset=['Website URL'])
-    .map(lambda x: "background-color: darkgreen;", subset=["Applied Date"])
-)
+styled_df = style_df(df=df)
 
 # AUTO RESIZE DF
 st.dataframe(styled_df, use_container_width=True)
