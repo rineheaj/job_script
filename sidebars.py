@@ -63,7 +63,8 @@ def delete_job(df):
 
 def sidebar(df):
     refresh_page()
+    add_mem_button()
     add_job()
     update_job_status(df)
     delete_job(df)
-    add_mem_button()
+    
