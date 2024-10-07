@@ -16,7 +16,7 @@ def add_mem_button():
     st.markdown(
         """
         <style>
-        .custom-mem-button {
+        div.stButton > button:first-child {
             background-color: orange;
             color: white;
             border: none;
@@ -34,20 +34,16 @@ def add_mem_button():
         unsafe_allow_html=True,
     )
 
-    # A LITTLE JSCRIPT
-    st.markdown(
-        """
-        <script>
-        const buttons = Array.from(document.querySelectorAll('div.stButton button'));
-        buttons.forEach(button => {
-            if (button.innerText === 'Check Memory Usage') {
-                button.classList.add('custom-mem-button');
-            }
-        });
-        </script>
-        """,
-        unsafe_allow_html=True,
-    )
+    # #A LITTLE JSCRIPT
+    # st.markdown(
+    #     '''
+    #     <script>
+    #     document.querySelectorAll('div.stButton button')
+    #     [1].classList.add('custom-button);
+    #     </script>
+    #     ''',
+    #     unsafe_allow_html=True
+    # )
 
     if st.sidebar.button("Check Memory Usage"):
         used_memory = check_used_mem()
