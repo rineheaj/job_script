@@ -38,8 +38,9 @@ st.dataframe(styled_df, use_container_width=True)
 sidebar(df=df)
 
 #CREATE/SHOW CHARTS
-# test_pie_chart, test_bar_chart1, test_bar_chart2 = create_charts(df=df)
+test_pie_chart, test_bar_chart1, test_bar_chart2 = create_charts(df=df)
 line_chart1 = create_line_chart(df=df)
-display_charts( 
+display_charts(
+    test_pie_chart, 
     line_chart1
 )
