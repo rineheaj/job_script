@@ -6,7 +6,6 @@ from config import set_title_w_param
 
 def show_second_page():
     set_title_w_param(page_title='⛔Work In Progress')
-    st.write('This is the second page.')
     second_page_sidebar()
 
 
