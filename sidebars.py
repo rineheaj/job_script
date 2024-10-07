@@ -1,18 +1,9 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import psutil
 import os
 from data_utils import save_json_data, create_new_job
 from github import commit_to_github
-
-def show_alert_js_refresh():
-    st.markdown(
-        '''
-        <script>
-        alert('Page has been refreshed!');
-        </script>
-        ''',
-        unsafe_allow_html=True
-    )
 
 def check_used_mem():
     process = psutil.Process(os.getpid())
@@ -20,6 +11,15 @@ def check_used_mem():
     used_mem = mem_info.rss / (1024**2)
     return used_mem
 
+def show_alert_js_refresh():
+    components.html(
+        '''
+        <script>
+        alert('Page has been refreshed!');
+        </script>
+        ''',
+        height=0
+    )
 
 def add_mem_button():
     st.markdown(
