@@ -30,11 +30,18 @@ def create_charts(df):
     return chart1, chart, chart2
 
 def create_line_chart(df):
-    line_chart = alt.Chart(df).mark_line().encode(
-        x='Applied Date',
-        y='count()',
-        color='Status',
-        tooltip=['Applied Date', 'Company', 'Position', 'Status']
+    agg_df = df.groupby(
+        [
+            'Applied Date',
+            'Status'
+        ]
+    ).size().reset_index(name='Count')
+    
+    line_chart = alt.Chart(agg_df).mark_line().encode(
+        x='Applied Date:T',
+        y='Count:Q',
+        color='Status:N',
+        tooltip=['Applied Date:T', 'Status:N', 'Count:Q']
     ).interactive()
     return line_chart
 
