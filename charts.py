@@ -65,6 +65,22 @@ def create_line_chart(df):
     )
     return line_chart
 
+def create_stacked_area_chart(df):
+    df['Applied Date'] = pd.to_datetime(
+        df['Applied Date'],
+        format='%Y-%m-%d',
+        errors='coerce'
+    )
+    agg_df = df.groupby(['Applied Date', 'Status']).size().reset_index(name='Count')
+
+    stacked_area_chart = alt.Chart(agg_df).mark_area().encode(
+        x='Applied Date:T',
+        y='Count:Q',
+        color='Status',
+        tooltip=['Applied Date:T', 'Status:N', 'Count:Q']
+    )
+    return stacked_area_chart
+
 
 def display_charts(*charts):
     # CSS STYLE FOR CHARTS/GRAPHS

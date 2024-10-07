@@ -2,7 +2,8 @@ import streamlit as st
 from charts import(
     create_charts, 
     display_charts, 
-    create_line_chart
+    create_line_chart,
+    create_stacked_area_chart
 )
 from config import set_title, set_table_title
 from style import style_df
@@ -40,7 +41,9 @@ sidebar(df=df)
 #CREATE/SHOW CHARTS
 test_pie_chart, test_bar_chart1, test_bar_chart2 = create_charts(df=df)
 line_chart1 = create_line_chart(df=df)
+stacked_chart1 = create_stacked_area_chart(df=df)
 display_charts(
     test_pie_chart, 
-    line_chart1
+    line_chart1,
+    stacked_chart1
 )
