@@ -37,7 +37,7 @@ def add_mem_button():
     st.markdown(
         '''
         <style>
-        div.stButton > button:first-child {
+        div.stButton > button#mem_button {
             background-color: orange;
             color: white;
             border: none;
