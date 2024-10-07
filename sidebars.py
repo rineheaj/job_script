@@ -60,7 +60,7 @@ def add_job():
         st.session_state["job_data"].append(new_job)
         save_json_data(st.session_state["job_data"])
         commit_to_github(st.session_state["job_data"])
-        st.success(f"Job added: {company} - {position} - {status}")
+        st.sidebar.success(f"Job added: {company} - {position} - {status}")
 
 
 def update_job_status(df):
