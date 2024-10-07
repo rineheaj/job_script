@@ -4,6 +4,6 @@ from second_page_sidebars import(
 )
 def show_second_page():
     st.title('Second Page')
-    st.subheader('Welcome to the second page.')
+    st.subheader('WIP')
     second_page_sidebar()
 
