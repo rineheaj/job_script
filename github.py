@@ -48,5 +48,5 @@ def commit_to_github(data):
     except requests.exceptions.RequestException as e:
         st.error(f'An error occurred: {e}')
     finally:
-        st.info('Attempt to commit changes to GitHub has completed.')
+        st.info('GitHub action has completed.')
     
