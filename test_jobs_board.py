@@ -1,5 +1,9 @@
 import streamlit as st
-from charts import create_charts, display_charts
+from charts import(
+    create_charts, 
+    display_charts, 
+    create_line_chart
+)
 from config import set_title, set_table_title
 from style import style_df
 from data_utils import load_json_data, create_job_table
@@ -27,4 +31,5 @@ sidebar(df=df)
 
 #CREATE/SHOW CHARTS
 pie_chart, bar_chart1, bar_chart2 = create_charts(df=df)
-display_charts(pie_chart, bar_chart1, bar_chart2)
+line_chart1 = create_line_chart(df=df)
+display_charts(pie_chart, bar_chart1, bar_chart2, line_chart1)

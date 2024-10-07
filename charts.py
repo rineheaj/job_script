@@ -29,8 +29,18 @@ def create_charts(df):
 
     return chart1, chart, chart2
 
+def create_line_chart(df):
+    line_chart1 = alt.Chart(df).mark_line().encode(
+        x='Applied Date',
+        y='count()',
+        color='Status',
+        tooltip=['Applied Date', 'Company', 'Position', 'Status']
+    ).interactive()
+    return line_chart1
 
-def display_charts(chart1, chart, chart2):
+
+
+def display_charts(*charts):
     # CSS STYLE FOR CHARTS/GRAPHS
     st.markdown(
         '''
@@ -42,14 +52,7 @@ def display_charts(chart1, chart, chart2):
     )
 
     # DISPLAY CHARTS/GRAPHS WITH MARKDOWN/CSS APPLIED
-    st.markdown('<div class="center">', unsafe_allow_html=True)
-    st.altair_chart(chart1, use_container_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    st.markdown('<div class="center">', unsafe_allow_html=True)
-    st.altair_chart(chart, use_container_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    st.markdown('<div class="center">', unsafe_allow_html=True)
-    st.altair_chart(chart2, use_container_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+    for chart in charts:
+        st.markdown('<div class="center">', unsafe_allow_html=True)
+        st.altair_chart(chart, use_container_width=True)
+        st.markdown('</div>', unsafe_allow_html=True)
