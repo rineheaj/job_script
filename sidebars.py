@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import psutil
 import os
 from data_utils import save_json_data, create_new_job
@@ -99,3 +98,6 @@ def sidebar(df):
     add_job()
     update_job_status(df)
     delete_job(df)
+
+            ###SECOND PAGE SIDEBAR LOGIC###
+

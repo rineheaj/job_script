@@ -1,20 +1,18 @@
 import streamlit as st
 from second_page import show_second_page
-from charts import(
-    create_charts, 
-    display_charts, 
+from charts import (
+    create_charts,
+    display_charts,
     create_line_chart,
-    create_stacked_area_chart
+    create_stacked_area_chart,
 )
 from config import set_title, set_table_title
 from style import style_df
-from data_utils import(
-    load_json_data, 
+from data_utils import (
+    load_json_data,
     create_job_table,
 )
-from sidebars import(
-    sidebar
-)
+from sidebars import sidebar
 
 data = load_json_data()
 
@@ -22,21 +20,17 @@ data = load_json_data()
 if "job_data" not in st.session_state:
     st.session_state["job_data"] = load_json_data()
 
-page = st.sidebar.selectbox(
-    'Select a page', 
-    ['Main Page', 'Second Page']
-)
+page = st.sidebar.selectbox("Select a page", ["Main Page", "Second Page"])
 
-if page == 'Main Page':
+if page == "Main Page":
 
-    #SET TITLES
+    # SET TITLES
     main_title = set_title()
     table_title = set_table_title()
 
-    #INIT DF
+    # INIT DF
     df = create_job_table()
     styled_df = style_df(df=df)
-
 
     # AUTO RESIZE DF
     st.dataframe(styled_df, use_container_width=True)
@@ -44,16 +38,11 @@ if page == 'Main Page':
     # SIDEBARS
     sidebar(df=df)
 
-    #CREATE/SHOW CHARTS
+    # CREATE/SHOW CHARTS
     test_pie_chart, test_bar_chart1, test_bar_chart2 = create_charts(df=df)
     line_chart1 = create_line_chart(df=df)
     stacked_chart1 = create_stacked_area_chart(df=df)
-    display_charts(
-        test_pie_chart, 
-        stacked_chart1
-    )
-elif page == 'Second Page':
+    display_charts(test_pie_chart, stacked_chart1)
+
+elif page == "Second Page":
     show_second_page()
-
-
-
