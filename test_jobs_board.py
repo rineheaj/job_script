@@ -8,7 +8,7 @@ from charts import(
 from config import set_title, set_table_title
 from style import style_df
 from data_utils import(load_json_data, 
-                       create_job_table
+                       create_job_table,
 )
 from sidebars import(
     sidebar

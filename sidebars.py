@@ -4,6 +4,15 @@ import os
 from data_utils import save_json_data, create_new_job
 from github import commit_to_github
 
+def show_alert_js_refresh():
+    st.markdown(
+        '''
+        <script>
+        alert('Page has been refreshed!');
+        </script>
+        ''',
+        unsafe_allow_html=True
+    )
 
 def check_used_mem():
     process = psutil.Process(os.getpid())
@@ -47,6 +56,7 @@ def add_mem_button():
 
     if st.sidebar.button("Check Memory Usage"):
         used_memory = check_used_mem()
+        show_alert_js_refresh()
         st.sidebar.info(f"Memory Usage: {used_memory:.2f} MB")
 
 
