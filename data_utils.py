@@ -34,14 +34,5 @@ def create_new_job(app_date, co, pos, status):
     }
     return job
 
-def applied_date_check(df):
-    df['Applied Date'] = pd.to_datetime(
-        df['Applied Date'],
-        errors='coerce'
-    )
-    if df['Applied Date'].isnull().all():
-        st.warning('No valid dates found in "Applied Date column" for line_chart1')
-    return df
-
 def check_used_mem():
     pass
