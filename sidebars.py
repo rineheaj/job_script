@@ -38,12 +38,13 @@ def add_mem_button():
     st.markdown(
         '''
         <script>
-        document.querySelectorAll('div.stButton button')[1].classList.add('custom-button);
+        document.querySelectorAll('div.stButton button')
+        [1].classList.add('custom-button);
         </script>
         ''',
         unsafe_allow_html=True
     )
-    
+
     if st.sidebar.button("Check Memory Usage"):
         used_memory = check_used_mem()
         st.sidebar.info(f"Memory Usage: {used_memory:.2f} MB")
