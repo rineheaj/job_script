@@ -48,5 +48,5 @@ if page == "Main Page":
     stacked_chart1 = create_stacked_area_chart(df=df)
     display_charts(test_pie_chart, stacked_chart1)
 
-elif page == "Second Page":
+elif page == "Random":
     show_second_page()
