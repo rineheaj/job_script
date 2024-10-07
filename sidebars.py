@@ -77,7 +77,7 @@ def update_job_status(df):
         st.session_state["job_data"][index_to_update]["Status"] = new_status
         save_json_data(st.session_state["job_data"])
         commit_to_github(st.session_state["job_data"])
-        st.success(f"Status updated for {job_to_update} to {new_status}")
+        st.sidebar.success(f"Status updated for {job_to_update} to {new_status}")
 
 
 def delete_job(df):
@@ -89,7 +89,7 @@ def delete_job(df):
         st.session_state["job_data"].pop(i_to_del)
         save_json_data(st.session_state["job_data"])
         commit_to_github(st.session_state["job_data"])
-        st.success(f'Job "{job_to_del}" deleted')
+        st.sidebar.success(f'Job "{job_to_del}" deleted')
 
 
 def sidebar(df):
