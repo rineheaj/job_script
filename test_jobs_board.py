@@ -20,7 +20,7 @@ data = load_json_data()
 if "job_data" not in st.session_state:
     st.session_state["job_data"] = load_json_data()
 
-page = st.sidebar.selectbox("Select a page", ["Main Page", "Second Page"])
+page = st.sidebar.selectbox("Select a page", ["Main Page", "Random"])
 
 if page == "Main Page":
 
