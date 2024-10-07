@@ -19,7 +19,7 @@ def load_json_data():
 def save_json_data(data):
     with open("job_data.json", "w") as f:
         json.dump(data, f, indent=4)
-        
+
 #CREATE DF
 def create_job_table():
     df = pd.DataFrame(st.session_state["job_data"])
@@ -34,3 +34,5 @@ def create_new_job(app_date, co, pos, status):
     }
     return job
 
+def check_used_mem():
+    pass
