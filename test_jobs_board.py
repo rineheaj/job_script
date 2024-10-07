@@ -11,15 +11,12 @@ data = load_json_data()
 if "job_data" not in st.session_state:
     st.session_state["job_data"] = load_json_data()
 
-# SET TITLE
+#SET TITLES
 main_title = set_title()
-
-# TABLE TITLE
 table_title = set_table_title()
 
-# CREATE DF
+#INIT DF
 df = create_job_table()
-
 styled_df = style_df(df=df)
 
 # AUTO RESIZE DF
@@ -28,5 +25,6 @@ st.dataframe(styled_df, use_container_width=True)
 # SIDEBARS
 sidebar(df=df)
 
+#CREATE/SHOW CHARTS
 pie_chart, bar_chart1, bar_chart2 = create_charts(df=df)
 display_charts(pie_chart, bar_chart1, bar_chart2)
