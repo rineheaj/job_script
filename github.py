@@ -30,7 +30,7 @@ def commit_to_github(data):
         ).decode('utf-8')
 
         commit_data = {
-            'message': f'Update job data {datetime.now().isoformat()}',
+            'message': f'Auto-Updated job data {datetime.now().isoformat()}\n{content}',
             'content': content,
             'sha': sha
         }
