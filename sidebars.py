@@ -16,7 +16,7 @@ def add_mem_button():
     st.markdown(
         """
         <style>
-        div.stButton > button[data-testid="mem_button"] {
+        div.stButton > button:first-child {
             background-color: orange;
             color: white;
             border: none;
@@ -25,7 +25,7 @@ def add_mem_button():
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 4px 2px;
+            margin: 4px 2 px;
             cursor: pointer;
             border-radius: 4px;
         }
@@ -33,10 +33,20 @@ def add_mem_button():
         """,
         unsafe_allow_html=True,
     )
-    if st.sidebar.button("Check Memory Usage", key="mem_button"):
+
+    #A LITTLE JSCRIPT
+    st.markdown(
+        '''
+        <script>
+        document.querySelectorAll('div.stButton button')[1].classList.add('custom-button);
+        </script>
+        ''',
+        unsafe_allow_html=True
+    )
+    
+    if st.sidebar.button("Check Memory Usage"):
         used_memory = check_used_mem()
         st.sidebar.info(f"Memory Usage: {used_memory:.2f} MB")
-
 
 
 def refresh_page():
