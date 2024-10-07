@@ -30,13 +30,13 @@ def create_charts(df):
     return chart1, chart, chart2
 
 def create_line_chart(df):
-    line_chart1 = alt.Chart(df).mark_line().encode(
+    line_chart = alt.Chart(df).mark_line().encode(
         x='Applied Date',
         y='count()',
         color='Status',
         tooltip=['Applied Date', 'Company', 'Position', 'Status']
     ).interactive()
-    return line_chart1
+    return line_chart
 
 
 
