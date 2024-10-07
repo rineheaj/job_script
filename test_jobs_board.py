@@ -7,7 +7,7 @@ from sidebars import sidebar
 
 data = load_json_data()
 
-# CREATE DATA STRUCTURE
+# CREATE SESSION STATE
 if "job_data" not in st.session_state:
     st.session_state["job_data"] = load_json_data()
 

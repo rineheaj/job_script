@@ -14,6 +14,7 @@ def status_color(val):
         return ""
     
     # DATAFRAME STYLES
+    
 def style_df(df):
     styled_df = (
         df.style.map(lambda x: "background-color: gray;", subset=["Company"])
