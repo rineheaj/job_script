@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import streamlit as st
 
+
 def create_job_table():
     df = pd.DataFrame(st.session_state["job_data"])
     return df
@@ -34,5 +35,6 @@ def create_new_job(app_date, co, pos, status):
     }
     return job
 
-def check_used_mem():
-    pass
+
+
+

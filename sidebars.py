@@ -1,7 +1,19 @@
 import streamlit as st
-import pandas as pd
+import psutil
+import os
 from data_utils import save_json_data, create_new_job
 from github import commit_to_github
+
+def check_used_mem():
+    process = psutil.Process(os.getpid())
+    mem_info = process.memory_info()
+    used_mem = mem_info.rss / (1024 **2)
+    return used_mem
+
+def add_mem_button():
+    if st.sidebar.button('Check Memory Usage'):
+        used_memory = check_used_mem()
+        st.info(f'Memory Usage: {used_memory:.2f} MB')
 
 def refresh_page():
     if st.sidebar.button("Refresh Page"):
@@ -54,3 +66,4 @@ def sidebar(df):
     add_job()
     update_job_status(df)
     delete_job(df)
+    add_mem_button()

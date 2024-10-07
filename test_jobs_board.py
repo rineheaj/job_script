@@ -9,7 +9,7 @@ from config import set_title, set_table_title
 from style import style_df
 from data_utils import(load_json_data, 
                        create_job_table,
-                       
+                       check_used_mem
 )
 from sidebars import sidebar
 
@@ -42,3 +42,4 @@ display_charts(
     test_pie_chart, 
     stacked_chart1
 )
+
