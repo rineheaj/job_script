@@ -1,22 +1,15 @@
 import streamlit as st
-import pandas as pd
 from github import commit_to_github
 from charts import create_charts, display_charts
 from config import set_title, set_table_title
-from data_utils import load_json_data, save_json_data
+from data_utils import load_json_data, save_json_data, create_job_table
 from style import style_df
-
 
 data = load_json_data()
 
 # CREATE DATA STRUCTURE
 if "job_data" not in st.session_state:
     st.session_state["job_data"] = load_json_data()
-
-
-def create_job_table():
-    df = pd.DataFrame(st.session_state["job_data"])
-    return df
 
 #SET TITLE
 main_title = set_title()
@@ -86,25 +79,5 @@ if st.sidebar.button("Delete a Job"):
     commit_to_github(st.session_state["job_data"])
     st.success(f'Job "{job_to_del}" deleted')
 
-
 pie_chart, bar_chart1, bar_chart2 = create_charts(df=df)
 display_charts(pie_chart, bar_chart1, bar_chart2)
-
-
-#               ##DONT USE FOR NOW##
-# #TEST TIMELINE CHART
-# import plotly.express as px
-
-# fig = px.timeline(df, x_start="Applied Date", x_end="Applied Date", y="Company", color="Status", title='Job Application Timeline')
-# st.plotly_chart(fig)
-
-# #INTERACTIVE MAP
-# m = folium.Map(location=[20,0], zoom_start=2)
-# for i, row in df.iterrows():
-#     folium.Marker([row['Latitude'], row['Longitude']], popup=row['Company']).add_to(m)
-# st_folium(m)
-
-# #TEST HEAT MAP
-# fig, ax = plt.subplots()
-# sns.heatmap(df.pivot_table(index='Company', columns='Status', aggfunc='size', fill_value=0), cmap='coolwarm', ax=ax)
-# st.pyplot(fig)
