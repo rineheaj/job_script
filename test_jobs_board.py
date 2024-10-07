@@ -4,7 +4,7 @@ from github import commit_to_github
 from charts import create_charts, display_charts
 from config import set_title, set_table_title
 from data_utils import load_json_data, save_json_data
-from style import status_color, style_df
+from style import style_df
 
 
 data = load_json_data()
