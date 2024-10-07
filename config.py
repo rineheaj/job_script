@@ -22,7 +22,7 @@ def set_title():
 #SET TITLE WITH PARAM
 def set_title_w_param(page_title):
     title = st.markdown(
-        '''
+        f'''
         <style>
         .title {{text-align: center; padding: 60px}}
         </style>
