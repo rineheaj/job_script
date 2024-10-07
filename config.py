@@ -20,13 +20,13 @@ def set_title():
     return title
 
 #SET TITLE WITH PARAM
-def set_title_w_param():
+def set_title_w_param(page_title):
     title = st.markdown(
         '''
         <style>
         .title {{text-align: center; padding: 60px}}
         </style>
-        <h1 class="title">⛔ Work In Progress</h1>
+        <h1 class="title">{page_title}</h1>
         ''',
         unsafe_allow_html=True
     )
