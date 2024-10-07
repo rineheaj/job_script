@@ -23,3 +23,13 @@ def save_json_data(data):
 def create_job_table():
     df = pd.DataFrame(st.session_state["job_data"])
     return df
+
+def create_new_job(app_date, co, pos, status):
+    job = {
+        'Applied Date': str(app_date),
+        'Company': co,
+        'Position': pos,
+        'Status': status
+    }
+    return job
+
