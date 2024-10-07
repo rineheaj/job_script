@@ -14,11 +14,9 @@ def status_color(val):
         return ""
     
     # DATAFRAME STYLES
-
 def style_df(df):
     styled_df = (
-        df.style.set_properties(**{'color': 'black'})
-        .map(lambda x: "background-color: gray;", subset=["Company"])
+        df.style.map(lambda x: "background-color: gray;", subset=["Company"])
         .map(lambda x: "background-color: darkcyan;", subset=["Position"])
         .map(status_color, subset=["Status"])
         # .map(lambda x: 'background-color: purple;', subset=['Website URL'])
