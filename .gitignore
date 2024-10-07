@@ -3,3 +3,4 @@ secrets.toml
 commit_and_push.ps1
 /.devcontainer
 update_readme.py
+depricated.py
