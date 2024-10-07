@@ -41,12 +41,12 @@ def commit_to_github(data):
         response.raise_for_status()
 
         if response.status_code == 200:
-            st.success('Changes committed to GitHub successfully')
+            st.sidebar.success('Changes committed to GitHub successfully')
         else:
-            st.error('Failed to commit changes to GitHub.')
+            st.sidebar.error('Failed to commit changes to GitHub.')
 
     except requests.exceptions.RequestException as e:
-        st.error(f'An error occurred: {e}')
+        st.sidebar.error(f'An error occurred: {e}')
     finally:
-        st.info('GitHub action has completed.')
+        st.sidebar.info('GitHub action has completed.')
     
