@@ -15,7 +15,7 @@ def check_used_mem():
 def add_mem_button():
     st.markdown(
         """
-        <style>.sidebar .stButton button,{
+        <style>.sidebar .stButton button{
             background-color: orange;
             color: white;
             border: none;
