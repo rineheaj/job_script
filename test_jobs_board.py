@@ -49,5 +49,5 @@ if page == "Main Page":
     display_charts(test_pie_chart, stacked_chart1)
 
 elif page == "Second Page":
-    set_title_w_param('🏢 Work In Progress')
+    set_title_w_param()
     show_second_page()
