@@ -47,12 +47,10 @@ if page == "Main Page":
     test_pie_chart, test_bar_chart1, test_bar_chart2 = create_charts(df=df)
     line_chart1 = create_line_chart(df=df)
     stacked_chart1 = create_stacked_area_chart(df=df)
-    word_cloud = create_word_cloud(df=df)
-    display_charts(test_pie_chart, stacked_chart1, word_cloud)
+    display_charts(test_pie_chart, stacked_chart1)
 
     if st.button('Generate Word Cloud'):
-        word_cloud = create_word_cloud(df=df)
-        st.pyplot(word_cloud)
+        create_word_cloud(df=df)
 
 elif page == "Random":
     show_second_page()
