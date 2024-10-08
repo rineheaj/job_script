@@ -1,6 +1,8 @@
 import altair as alt
 import streamlit as st
 import pandas as pd
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 
 def create_charts(df):
@@ -49,7 +51,6 @@ def create_line_chart(df):
         df["Applied Date"], format="%Y-%m-%d", errors="coerce"
     )
 
-    
     agg_df = df.groupby(["Applied Date", "Status"]).size().reset_index(name="Count")
 
     line_chart = (
@@ -65,21 +66,40 @@ def create_line_chart(df):
     )
     return line_chart
 
-def create_stacked_area_chart(df):
-    df['Applied Date'] = pd.to_datetime(
-        df['Applied Date'],
-        format='%Y-%m-%d',
-        errors='coerce'
-    )
-    agg_df = df.groupby(['Applied Date', 'Status']).size().reset_index(name='Count')
 
-    stacked_area_chart = alt.Chart(agg_df).mark_area().encode(
-        x='Applied Date:T',
-        y='Count:Q',
-        color='Status',
-        tooltip=['Applied Date:T', 'Status:N', 'Count:Q']
+def create_stacked_area_chart(df):
+    df["Applied Date"] = pd.to_datetime(
+        df["Applied Date"], format="%Y-%m-%d", errors="coerce"
+    )
+    agg_df = df.groupby(["Applied Date", "Status"]).size().reset_index(name="Count")
+
+    stacked_area_chart = (
+        alt.Chart(agg_df)
+        .mark_area()
+        .encode(
+            x="Applied Date:T",
+            y="Count:Q",
+            color="Status",
+            tooltip=["Applied Date:T", "Status:N", "Count:Q"],
+        )
     )
     return stacked_area_chart
+
+
+def create_word_cloud(df):
+
+    text = " ".join(df["Company"].dropna().tolist())
+
+    # Generate the word cloud
+    wordcloud = WordCloud(width=800, height=400, background_color="white").generate(
+        text
+    )
+
+    # Display the word cloud using matplotlib
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation="bilinear")
+    plt.axis("off")
+    return plt
 
 
 def display_charts(*charts):

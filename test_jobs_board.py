@@ -5,6 +5,7 @@ from charts import (
     display_charts,
     create_line_chart,
     create_stacked_area_chart,
+    create_word_cloud
 )
 from config import set_title, set_table_title
 from style import style_df
@@ -46,7 +47,12 @@ if page == "Main Page":
     test_pie_chart, test_bar_chart1, test_bar_chart2 = create_charts(df=df)
     line_chart1 = create_line_chart(df=df)
     stacked_chart1 = create_stacked_area_chart(df=df)
-    display_charts(test_pie_chart, stacked_chart1)
+    word_cloud = create_word_cloud(df=df)
+    display_charts(test_pie_chart, stacked_chart1, word_cloud)
+
+    if st.button('Generate Word Cloud'):
+        word_cloud = create_word_cloud(df=df)
+        st.pyplot(word_cloud)
 
 elif page == "Random":
     show_second_page()
