@@ -104,5 +104,5 @@ def sidebar(df):
     update_job_status(df)
     delete_job(df)
 
-            ###SECOND PAGE SIDEBAR LOGIC###
+            
 

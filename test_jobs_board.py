@@ -1,16 +1,28 @@
 import streamlit as st
 from second_page import show_second_page
-from charts import create_charts, display_charts, create_line_chart, create_stacked_area_chart
+from charts import (
+    create_charts,
+    display_charts,
+    create_line_chart,
+    create_stacked_area_chart,
+)
 from config import set_title, set_table_title
 from style import style_df
-from data_utils import load_json_data, create_job_table
+from data_utils import load_json_data, load_second_page_json_data, create_job_table
 from sidebars import sidebar
 
+# PAGE 1 DATA
 data = load_json_data()
+
+# PAGE 2 DATA
+second_page_data = load_second_page_json_data(filename="job_data_second_page.json")
 
 # CREATE SESSION STATE
 if "job_data" not in st.session_state:
     st.session_state["job_data"] = load_json_data()
+
+if "second_page_json_data" not in st.session_state:
+    st.session_state["second_page_job_data"] = second_page_data
 
 ##CHECK FOR SELECTED PAGE
 page = st.sidebar.selectbox("Select a page", ["Main Page", "Random"])
@@ -38,4 +50,3 @@ if page == "Main Page":
 
 elif page == "Random":
     show_second_page()
-    
