@@ -2,7 +2,7 @@ import streamlit as st
 from second_page_sidebars import second_page_sidebar
 from config import set_title_w_param
 from data_utils import create_second_page_job_table
-import pandas as pd
+
 
 
 def show_second_page():
