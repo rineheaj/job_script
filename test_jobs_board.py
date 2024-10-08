@@ -38,3 +38,4 @@ if page == "Main Page":
 
 elif page == "Random":
     show_second_page()
+    ##TESTING#
