@@ -1,5 +1,5 @@
 import streamlit as st
-from data_utils import save_second_page_json_data, create_new_job, add_job_entry, remove_job_entry
+from data_utils import save_second_page_json_data, create_new_job
 from github import commit_second_page_to_github
 from sidebars import check_used_mem
 
