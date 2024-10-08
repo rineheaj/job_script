@@ -21,7 +21,7 @@ second_page_data = load_second_page_json_data(filename="job_data_second_page.jso
 if "job_data" not in st.session_state:
     st.session_state["job_data"] = load_json_data()
 
-if "second_page_json_data" not in st.session_state:
+if "second_page_job_data" not in st.session_state:
     st.session_state["second_page_job_data"] = second_page_data
 
 ##CHECK FOR SELECTED PAGE
