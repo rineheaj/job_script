@@ -5,7 +5,7 @@ commit_and_push.ps1
 update_readme.py
 depricated.py
 pull_commit_and_push.ps1
-
+find_all_powershell_scripts.ps1
 json_data_display_script.py
 pokemon.csv
 /Deep_Pokemon_Project
