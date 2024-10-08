@@ -5,7 +5,8 @@ from charts import (
     display_charts,
     create_line_chart,
     create_stacked_area_chart,
-    create_word_cloud
+    create_word_cloud,
+    create_3d_scatter_plot
 )
 from config import set_title, set_table_title
 from style import style_df
@@ -47,7 +48,13 @@ if page == "Main Page":
     test_pie_chart, test_bar_chart1, test_bar_chart2 = create_charts(df=df)
     line_chart1 = create_line_chart(df=df)
     stacked_chart1 = create_stacked_area_chart(df=df)
+    
     display_charts(test_pie_chart, stacked_chart1)
+
+    if st.button('Gen 3D Scatter Plat'):
+        three_dee_fig = create_3d_scatter_plot(df=df)
+        st.plotly_chart(three_dee_fig)
+
 
     if st.button('Generate Word Cloud'):
         create_word_cloud(df=df)

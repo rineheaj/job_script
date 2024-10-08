@@ -2,6 +2,7 @@ import altair as alt
 import streamlit as st
 import pandas as pd
 from wordcloud import WordCloud
+import plotly.express as px
 import matplotlib.pyplot as plt
 
 def create_charts(df):
@@ -92,6 +93,17 @@ def create_word_cloud(df):
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
     st.pyplot(plt)
+
+def create_3d_scatter_plot(df):
+    fig = px.scatter_3d(
+        df, x='Applied Date', 
+        y='Company', 
+        z='Status', 
+        color='Status'
+    )
+    return fig
+
+
 
 def display_charts(*charts):
     # CSS STYLE FOR CHARTS/GRAPHS
