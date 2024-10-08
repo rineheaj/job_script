@@ -4,13 +4,11 @@ import os
 from data_utils import save_json_data, create_new_job
 from github import commit_to_github
 
-
 def check_used_mem():
     process = psutil.Process(os.getpid())
     mem_info = process.memory_info()
     used_mem = mem_info.rss / (1024**2)
     return used_mem
-
 
 def add_mem_button():
     st.markdown(
@@ -41,11 +39,9 @@ def add_mem_button():
         elif used_memory >= 200:
             st.sidebar.warning(f"Memory Usage: {used_memory:.2f} MB\n")
 
-
 def refresh_page():
     if st.sidebar.button("Refresh Page"):
         st.session_state.update()
-
 
 def add_job():
     st.sidebar.subheader("➕ Add New Job Application")
@@ -60,11 +56,10 @@ def add_job():
         new_job = create_new_job(
             app_date=applied_date, co=company, pos=position, status=status
         )
-        st.session_state["job_data"].append(new_job)
-        save_json_data(st.session_state["job_data"])
-        commit_to_github(st.session_state["job_data"])
+        st.session_state["job_data_first_page"].append(new_job)
+        save_json_data(st.session_state["job_data_first_page"])
+        commit_to_github(st.session_state["job_data_first_page"])
         st.sidebar.success(f"Job added: {company} - {position} - {status}")
-
 
 def update_job_status(df):
     st.sidebar.subheader("🔄 Update Job Status")
@@ -77,11 +72,10 @@ def update_job_status(df):
 
     if st.sidebar.button("Update Status"):
         index_to_update = df[df["Position"] == job_to_update].index[0]
-        st.session_state["job_data"][index_to_update]["Status"] = new_status
-        save_json_data(st.session_state["job_data"])
-        commit_to_github(st.session_state["job_data"])
+        st.session_state["job_data_first_page"][index_to_update]["Status"] = new_status
+        save_json_data(st.session_state["job_data_first_page"])
+        commit_to_github(st.session_state["job_data_first_page"])
         st.sidebar.success(f"Status updated for {job_to_update} to {new_status}")
-
 
 def delete_job(df):
     st.sidebar.subheader("🗑️ Delete a Job Listing")
@@ -89,11 +83,10 @@ def delete_job(df):
 
     if st.sidebar.button("Delete a Job"):
         i_to_del = df[df["Position"] == job_to_del].index[0]
-        st.session_state["job_data"].pop(i_to_del)
-        save_json_data(st.session_state["job_data"])
-        commit_to_github(st.session_state["job_data"])
+        st.session_state["job_data_first_page"].pop(i_to_del)
+        save_json_data(st.session_state["job_data_first_page"])
+        commit_to_github(st.session_state["job_data_first_page"])
         st.sidebar.success(f'Job "{job_to_del}" deleted')
-
 
 def sidebar(df):
     refresh_page()
