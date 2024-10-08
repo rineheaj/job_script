@@ -53,10 +53,14 @@ def add_job():
         new_job = create_new_job(
             app_date=applied_date, co=company, pos=position, status=status, response_date=response_date
         )
-        st.session_state["job_data"].append(new_job)
-        save_second_page_json_data(st.session_state["job_data"])
-        commit_second_page_to_github(st.session_state["job_data"])
+        if "second_page_job_data" not in st.session_state:
+            st.session_state["second_page_job_data"] = []
+        st.session_state["second_page_job_data"].append(new_job)
+        save_second_page_json_data(st.session_state["second_page_job_data"])
+        commit_second_page_to_github(st.session_state["second_page_job_data"])
         st.sidebar.success(f"Job added: {company} - {position} - {status}")
+        st.write(st.session_state["second_page_job_data"])  # Debug statement
+
 
 def update_job_status(df):
     st.sidebar.subheader("🔄 Update Job Status")
