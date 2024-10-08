@@ -37,7 +37,7 @@ def create_new_job(app_date, co, pos, status):
 
 
 #CREATE NEW SECOND PAGE JOB
-def create_second_page_job_table(app_date, co, pos, status, response_date=None):
+def create_second_page_job_entry(app_date, co, pos, status, response_date=None):
     job = {
         'Applied Date': str(app_date),
         'Company': co,

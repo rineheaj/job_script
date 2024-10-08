@@ -1,5 +1,5 @@
 import streamlit as st
-from data_utils import save_second_page_json_data, create_new_job
+from data_utils import save_second_page_json_data, create_second_page_job_entry
 from github import commit_second_page_to_github
 from sidebars import check_used_mem
 
@@ -50,9 +50,14 @@ def add_job():
     response_date = st.sidebar.date_input("Response Date", value=None)
 
     if st.sidebar.button("Add Job"):
-        new_job = create_new_job(
-            app_date=applied_date, co=company, pos=position, status=status, response_date=response_date
+        new_job = create_second_page_job_entry(
+            app_date=applied_date, 
+            co=company, 
+            pos=position, 
+            status=status, 
+            response_date=response_date
         )
+
         if "second_page_job_data" not in st.session_state:
             st.session_state["second_page_job_data"] = []
         st.session_state["second_page_job_data"].append(new_job)
