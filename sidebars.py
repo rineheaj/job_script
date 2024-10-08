@@ -37,15 +37,10 @@ def add_mem_button():
     if st.sidebar.button("Check Memory Usage"):
         used_memory = check_used_mem()
         if used_memory <= 200:
-            st.sidebar.error(
-                f"Memory Usage: {used_memory:.2f} MB\n"
-                f"Use more memory"
-            )
-        elif used_memory >=200:
-            st.sidebar.info(
-                f'Memory Usage: {used_memory:.2f} MB\n'
-                f'That is better ussage.'
-                )
+            st.sidebar.info(f"Memory Usage: {used_memory:.2f} MB\n" f"Use more memory")
+        elif used_memory >= 200:
+            st.sidebar.warning(f"Memory Usage: {used_memory:.2f} MB\n")
+
 
 def refresh_page():
     if st.sidebar.button("Refresh Page"):
@@ -106,6 +101,3 @@ def sidebar(df):
     add_job()
     update_job_status(df)
     delete_job(df)
-
-            
-
