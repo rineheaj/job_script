@@ -20,7 +20,7 @@ def style_df(df):
         .map(lambda x: "background-color: darkcyan;", subset=["Position"])
         .map(status_color, subset=["Status"])
         # .map(lambda x: 'background-color: purple;', subset=['Website URL'])
-        .map(lambda x: "background-color: darkgreen;", subset=["Applied Date"])
+        .map(lambda x: "background-color: darkorange;", subset=["Applied Date"])
     )
     return styled_df
 
