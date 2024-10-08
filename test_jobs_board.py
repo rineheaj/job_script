@@ -6,7 +6,8 @@ from charts import (
     create_line_chart,
     create_stacked_area_chart,
     create_word_cloud,
-    create_3d_scatter_plot
+    create_3d_scatter_plot,
+    create_network_graph
 )
 from config import set_title, set_table_title
 from style import style_df
@@ -55,6 +56,9 @@ if page == "Main Page":
         three_dee_fig = create_3d_scatter_plot(df=df)
         st.plotly_chart(three_dee_fig)
 
+    if st.button('Gen Network Graph'):
+        net_fig = create_network_graph(df=df)
+        st.plotly_chart(net_fig)
 
     if st.button('Generate Word Cloud'):
         create_word_cloud(df=df)
