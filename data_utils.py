@@ -35,6 +35,12 @@ def create_new_job(app_date, co, pos, status):
     }
     return job
 
+def create_second_page_job_table():
+    df = pd.DataFrame(st.session_state['job_data'])
+    df['Response Date'] = pd.to_datetime(df['Response Date'], errors='coerce')
+    df['Applied Date'] = pd.to_datetime(df['Response Date'] - df['Applied Date']).dt.days_in_month
+    return df
+
 
 
 

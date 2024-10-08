@@ -1,13 +1,14 @@
 import streamlit as st
 from second_page_sidebars import second_page_sidebar
 from config import set_title_w_param
+from data_utils import create_second_page_job_table
 import pandas as pd
 
 
-def show_second_page(df):
+def show_second_page():
     set_title_w_param(page_title='📊 Job Application Statistics')
     st.write("This page provides various statistics about your job applications.")
-    
+    df = create_second_page_job_table()
     # Total number of applications
     total_applications = len(df)
     st.metric(label="Total Applications", value=total_applications)
