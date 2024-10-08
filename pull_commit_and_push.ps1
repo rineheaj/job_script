@@ -1,6 +1,6 @@
-$config = Get-Content -Raw -Path
-"config.json" | ConvertFrom-Json
-$jobPath = $config.$jobPath
+$config = Get-Content -Raw -Path "config.json" | ConvertFrom-Json
+
+$jobPath = $config.jobPath
 
 Set-Location $jobPath
 
@@ -8,11 +8,11 @@ git pull origin master --no-edit
 
 $currentDateTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
-$changedFiles = git status --porcelain | 
-ForEach-Object { $_.Substring(3) } | Out-String
 
-$commitMessage = "Automated commit on $currentDateTime`n" +
-"Changed files:`n$changedFiles"
+$changedFiles = git status --porcelain | ForEach-Object { $_.Substring(3) } | Out-String
+
+
+$commitMessage = "Automated commit on $currentDateTime`nChanged files:`n$changedFiles"
 
 git add .
 
