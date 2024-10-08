@@ -9,16 +9,16 @@ def show_second_page():
     set_title_w_param(page_title='📊 Job Application Statistics')
     st.write("This page provides various statistics about your job applications.")
     df = create_second_page_job_table()
-    # Total number of applications
+    
     total_applications = len(df)
     st.metric(label="Total Applications", value=total_applications)
     
-    # Number of applications by status
+   
     status_counts = df['Status'].value_counts()
     st.write("### Applications by Status")
     st.bar_chart(status_counts)
     
-    # Average time between application and response
+    
     df['Applied Date'] = pd.to_datetime(df['Applied Date'], errors='coerce')
     df['Response Date'] = pd.to_datetime(df['Response Date'], errors='coerce')
     df['Response Time'] = (df['Response Date'] - df['Applied Date']).dt.days
