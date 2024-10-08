@@ -90,15 +90,13 @@ def create_stacked_area_chart(df):
 
 
 def create_word_cloud(df):
-    # Combine the company names into a single string
+
     text = " ".join(df["Company"].dropna().tolist())
 
-    # Generate the word cloud
     wordcloud = WordCloud(width=800, height=400, background_color="white").generate(
         text
     )
 
-    # Display the word cloud using matplotlib
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation="bilinear")
     plt.axis("off")
@@ -183,6 +181,7 @@ def create_network_graph(df):
         ),
     )
     return fig
+
 
 def display_charts(*charts):
     # CSS STYLE FOR CHARTS/GRAPHS
