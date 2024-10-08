@@ -23,6 +23,6 @@ def show_second_page():
     avg_response_time = df['Response Time'].dropna().mean()
     st.metric(label="Average Response Time (days)", value=f"{avg_response_time:.2f}")
     
-    second_page_sidebar()
+    second_page_sidebar(df=df)
 
 
