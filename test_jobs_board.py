@@ -37,6 +37,5 @@ if page == "Main Page":
     display_charts(test_pie_chart, stacked_chart1)
 
 elif page == "Random":
-    df = create_job_table()
-    show_second_page(df=df)
+    show_second_page()
     
