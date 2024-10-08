@@ -1,6 +1,6 @@
 $config = Get-Content -Raw -Path "config.json" | ConvertFrom-Json
 
-$jobPath = $config.jobPath
+$jobPath = $config.absolute_job_path
 
 Set-Location $jobPath
 
