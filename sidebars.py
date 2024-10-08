@@ -42,7 +42,10 @@ def add_mem_button():
                 f"Use more memory"
             )
         elif used_memory >=200:
-            st.sidebar.info('That is better ussage.')
+            st.sidebar.info(
+                f'Memory Usage: {used_memory:.2f} MB\n'
+                f'That is better ussage.'
+                )
 
 def refresh_page():
     if st.sidebar.button("Refresh Page"):
