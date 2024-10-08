@@ -18,8 +18,8 @@ data = load_json_data()
 second_page_data = load_second_page_json_data(filename="job_data_second_page.json")
 
 # CREATE SESSION STATE
-if "job_data" not in st.session_state:
-    st.session_state["job_data"] = load_json_data()
+if "job_data_first_page" not in st.session_state:
+    st.session_state["job_data_first_page"] = load_json_data()
 
 if "second_page_job_data" not in st.session_state:
     st.session_state["second_page_job_data"] = second_page_data

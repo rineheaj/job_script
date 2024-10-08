@@ -66,7 +66,6 @@ def add_job():
         st.sidebar.success(f"Job added: {company} - {position} - {status}")
         st.write(st.session_state["second_page_job_data"])  # Debug statement
 
-
 def update_job_status(df):
     st.sidebar.subheader("🔄 Update Job Status")
     job_to_update = st.sidebar.selectbox(
@@ -78,9 +77,9 @@ def update_job_status(df):
 
     if st.sidebar.button("Update Status"):
         index_to_update = df[df["Position"] == job_to_update].index[0]
-        st.session_state["job_data"][index_to_update]["Status"] = new_status
-        save_second_page_json_data(st.session_state["job_data"])
-        commit_second_page_to_github(st.session_state["job_data"])
+        st.session_state["second_page_job_data"][index_to_update]["Status"] = new_status
+        save_second_page_json_data(st.session_state["second_page_job_data"])
+        commit_second_page_to_github(st.session_state["second_page_job_data"])
         st.sidebar.success(f"Status updated for {job_to_update} to {new_status}")
 
 def delete_job(df):
@@ -89,9 +88,9 @@ def delete_job(df):
 
     if st.sidebar.button("Delete a Job"):
         i_to_del = df[df["Position"] == job_to_del].index[0]
-        st.session_state["job_data"].pop(i_to_del)
-        save_second_page_json_data(st.session_state["job_data"])
-        commit_second_page_to_github(st.session_state["job_data"])
+        st.session_state["second_page_job_data"].pop(i_to_del)
+        save_second_page_json_data(st.session_state["second_page_job_data"])
+        commit_second_page_to_github(st.session_state["second_page_job_data"])
         st.sidebar.success(f'Job "{job_to_del}" deleted')
 
 def second_page_sidebar(df):
@@ -100,5 +99,3 @@ def second_page_sidebar(df):
     add_job()
     update_job_status(df)
     delete_job(df)
-
-    

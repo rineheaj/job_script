@@ -2,30 +2,25 @@ import json
 import pandas as pd
 import streamlit as st
 
-
-def create_job_table():
-    df = pd.DataFrame(st.session_state["job_data"])
-    return df
-
-##LOAD DATA
+# LOAD DATA
 def load_json_data():
     try:
         with open("job_data.json", "r") as f:
-            return json.load(f)
+            st.session_state["job_data_first_page"] = json.load(f)
     except FileNotFoundError:
-        return []
-
+        st.session_state["job_data_first_page"] = []
 
 # SAVE DATA
 def save_json_data(data):
     with open("job_data.json", "w") as f:
         json.dump(data, f, indent=4)
 
-#CREATE DF
+# CREATE DF
 def create_job_table():
-    df = pd.DataFrame(st.session_state["job_data"])
+    df = pd.DataFrame(st.session_state["job_data_first_page"])
     return df
 
+# CREATE NEW JOB
 def create_new_job(app_date, co, pos, status):
     job = {
         'Applied Date': str(app_date),
@@ -35,8 +30,7 @@ def create_new_job(app_date, co, pos, status):
     }
     return job
 
-
-#CREATE NEW SECOND PAGE JOB
+# CREATE NEW SECOND PAGE JOB
 def create_second_page_job_entry(app_date, co, pos, status, response_date=None):
     job = {
         'Applied Date': str(app_date),
@@ -48,26 +42,23 @@ def create_second_page_job_entry(app_date, co, pos, status, response_date=None):
     }
     return job
 
-##CREATE SECOND DF
+# CREATE SECOND DF
 def create_second_page_job_table():
-    df = pd.DataFrame(st.session_state['job_data'])
+    df = pd.DataFrame(st.session_state['second_page_job_data'])
     df['Applied Date'] = pd.to_datetime(df['Applied Date'], errors='coerce')
     df['Response Date'] = pd.NaT
     df['Days to Response'] = None
     return df
 
-#LOAD SECOND JSON DATA
+# LOAD SECOND JSON DATA
 def load_second_page_json_data(filename='job_data_second_page.json'):
-    with open(filename, 'r') as f:
-        data = json.load(f)
-    return data
+    try:
+        with open(filename, 'r') as f:
+            st.session_state["second_page_job_data"] = json.load(f)
+    except FileNotFoundError:
+        st.session_state["second_page_job_data"] = []
 
-#SAVE SECOND JSON DATA
+# SAVE SECOND JSON DATA
 def save_second_page_json_data(data, filename='job_data_second_page.json'):
-    with open (filename, 'w') as f:
+    with open(filename, 'w') as f:
         json.dump(data, f, indent=4)
-
-
-
-
-
