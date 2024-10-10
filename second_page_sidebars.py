@@ -83,26 +83,22 @@ def update_job_status(df):
         commit_second_page_to_github(st.session_state["second_page_job_data"])
         st.sidebar.success(f"Status updated for {job_to_update} to {new_status}")
 
-def update_response_date():
+def update_response_date(df):
     st.sidebar.subheader("📅 Update Response Date")
     job_to_update = st.sidebar.selectbox(
-        "Select Job to Update", [job["Position"] for job in st.session_state["second_page_job_data"]]
+        "Select Job to Update", df["Position"].unique()
     )
     new_response_date = st.sidebar.date_input("New Response Date")
 
     if st.sidebar.button("Update Response Date"):
-        for job in st.session_state["second_page_job_data"]:
-            if job["Position"] == job_to_update:
-                job["Response Date"] = str(new_response_date)
-                applied_date = pd.to_datetime(job["Applied Date"])
-                days_to_response = (new_response_date - applied_date).days
-                job["Days to Response"] = days_to_response
-                break
+        index_to_update = df[df["Position"] == job_to_update].index[0]
+        st.session_state["second_page_job_data"][index_to_update]["Response Date"] = str(new_response_date)
+        applied_date = pd.to_datetime(st.session_state["second_page_job_data"][index_to_update]["Applied Date"])
+        days_to_response = (new_response_date - applied_date).days
+        st.session_state["second_page_job_data"][index_to_update]["Days to Response"] = days_to_response
         save_second_page_json_data(st.session_state["second_page_job_data"])
         commit_second_page_to_github(st.session_state["second_page_job_data"])
         st.sidebar.success(f"Response date updated for {job_to_update} to {new_response_date}")
-
-
 
 def delete_job(df):
     st.sidebar.subheader("🗑️ Delete a Job Listing")
@@ -120,5 +116,5 @@ def second_page_sidebar(df):
     add_mem_button()
     add_job()
     update_job_status(df)
-    update_response_date()
+    update_response_date(df)
     delete_job(df)
