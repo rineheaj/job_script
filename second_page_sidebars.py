@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 from data_utils import save_second_page_json_data, create_second_page_job_entry
 from github import commit_second_page_to_github
 from sidebars import check_used_mem
@@ -82,6 +83,27 @@ def update_job_status(df):
         commit_second_page_to_github(st.session_state["second_page_job_data"])
         st.sidebar.success(f"Status updated for {job_to_update} to {new_status}")
 
+def update_response_date():
+    st.sidebar.subheader("📅 Update Response Date")
+    job_to_update = st.sidebar.selectbox(
+        "Select Job to Update", [job["Position"] for job in st.session_state["second_page_job_data"]]
+    )
+    new_response_date = st.sidebar.date_input("New Response Date")
+
+    if st.sidebar.button("Update Response Date"):
+        for job in st.session_state["second_page_job_data"]:
+            if job["Position"] == job_to_update:
+                job["Response Date"] = str(new_response_date)
+                applied_date = pd.to_datetime(job["Applied Date"])
+                days_to_response = (new_response_date - applied_date).days
+                job["Days to Response"] = days_to_response
+                break
+        save_second_page_json_data(st.session_state["second_page_job_data"])
+        commit_second_page_to_github(st.session_state["second_page_job_data"])
+        st.sidebar.success(f"Response date updated for {job_to_update} to {new_response_date}")
+
+
+
 def delete_job(df):
     st.sidebar.subheader("🗑️ Delete a Job Listing")
     job_to_del = st.sidebar.selectbox("Select Job to Delete", df["Position"].unique())
@@ -98,4 +120,5 @@ def second_page_sidebar(df):
     add_mem_button()
     add_job()
     update_job_status(df)
+    update_response_date()
     delete_job(df)
