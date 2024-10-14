@@ -60,7 +60,7 @@ if page == "Main Page":
         net_fig = create_network_graph(df=df)
         st.plotly_chart(net_fig)
 
-    if st.button('Generate Word Cloud'):
+    if st.button('Gen Word Cloud'):
         create_word_cloud(df=df)
 
 elif page == "Random":
