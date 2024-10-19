@@ -21,8 +21,8 @@ def show_second_page():
     st.bar_chart(status_counts)
     
     #---Convert dfs---
-    df['Response Date'] = pd.to_datetime(df['Response Date'], format='%Y-%m-%d')
-    df['Applied Date'] = pd.to_datetime(df['Applied Date'], format='%Y-%m-%d')
+    df['Response Date'] = pd.to_datetime(df['Response Date'], format='%m-%d-%Y')
+    df['Applied Date'] = pd.to_datetime(df['Applied Date'], format='%m-%d-%Y')
 
     
 

@@ -45,11 +45,11 @@ def create_second_page_job_entry(app_date, co, pos, status, response_date=None):
 # CREATE SECOND DF
 def create_second_page_job_table():
     df = pd.DataFrame(st.session_state['second_page_job_data'])
-    df['Applied Date'] = pd.to_datetime(df['Applied Date'], format='%Y-%m-%d', errors='coerce')
-    df['Response Date'] = pd.to_datetime(df['Response Date'], format='%Y-%m-%d', errors='coerce')
+    df['Applied Date'] = pd.to_datetime(df['Applied Date'], format='%m-%d-%Y', errors='coerce')
+    df['Response Date'] = pd.to_datetime(df['Response Date'], format='%m-%d-%Y', errors='coerce')
     df['Days to Response'] = (df['Response Date'] - df['Applied Date']).dt.days
-    df['Applied Date'] = df['Applied Date'].dt.strftime('%Y-%m-%d')
-    df['Response Date'] = df['Response Date'].dt.strftime('%Y-%m-%d')
+    df['Applied Date'] = df['Applied Date'].dt.strftime('%m-%d-%Y')
+    df['Response Date'] = df['Response Date'].dt.strftime('%m-%d-%Y')
     return df
 
 # LOAD SECOND JSON DATA
