@@ -27,6 +27,8 @@ def show_second_page():
     st.metric(label="Total Applications", value=total_applications)
     st.write("### Applications by Status")
     st.bar_chart(status_counts)
+
+    # Display the subset of the DataFrame with formatted dates
     st.write(df[['Response Date', 'Applied Date', 'Response Time']])
     st.metric(label="Average Response Time (days)", value=f"{avg_response_time:.2f}")
 
