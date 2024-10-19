@@ -27,7 +27,7 @@ def show_second_page():
     st.metric(label="Total Applications", value=total_applications)
     st.write("### Applications by Status")
     st.bar_chart(status_counts)
-    st.write(df[['Response Date', 'Applied Date', 'Response Time']])
+    st.dataframe(df[['Response Date', 'Applied Date', 'Response Time']])
     st.metric(label="Average Response Time (days)", value=f"{avg_response_time:.2f}")
 
     second_page_sidebar(df=df)
