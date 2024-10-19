@@ -1,7 +1,7 @@
 import streamlit as st
 from second_page_sidebars import second_page_sidebar
 from config import set_title_w_param
-from data_utils import create_second_page_job_table
+from data_utils import create_second_page_job_table, convert_to_string
 import pandas as pd
 
 
@@ -10,28 +10,27 @@ def show_second_page():
     st.write("This page provides various statistics about your job applications.")
     
     df = create_second_page_job_table()
-    
-    st.dataframe(df)
 
+    # Perform calculations before formatting dates
     total_applications = len(df)
-    st.metric(label="Total Applications", value=total_applications)
-    
     status_counts = df['Status'].value_counts()
+
+    # Calculate avg response time
+    df['Response Time'] = (df['Response Date'] - df['Applied Date']).dt.days
+    avg_response_time = df['Response Time'].dropna().mean()
+
+    # Format dates to remove time component
+    df = convert_to_string(df, ['Applied Date', 'Response Date'])
+
+    # Display DataFrame and metrics
+    st.dataframe(df)
+    st.metric(label="Total Applications", value=total_applications)
     st.write("### Applications by Status")
     st.bar_chart(status_counts)
-    
-    #---Convert dfs---
-    df['Response Date'] = pd.to_datetime(df['Response Date'], format='%Y-%m-%d')
-    df['Applied Date'] = pd.to_datetime(df['Applied Date'], format='%Y-%m-%d')
-
-    
-
-    #---Calculate avg response time---
-    df['Response Time'] = (df['Response Date'] - df['Applied Date']).dt.days
     st.write(df[['Response Date', 'Applied Date', 'Response Time']])
-    avg_response_time = df['Response Time'].dropna().mean()
     st.metric(label="Average Response Time (days)", value=f"{avg_response_time:.2f}")
-    
+
     second_page_sidebar(df=df)
+
 
 
