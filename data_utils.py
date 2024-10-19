@@ -47,7 +47,7 @@ def create_second_page_job_table():
     df = pd.DataFrame(st.session_state['second_page_job_data'])
     df['Applied Date'] = pd.to_datetime(df['Applied Date'], format='%Y-%m-%d', errors='coerce')
     df['Response Date'] = pd.to_datetime(df['Response Date'], format='%Y-%m-%d', errors='coerce')
-    df['Days to Response'] = None
+    df['Days to Response'] = pd.to_datetime(df['Response Date'] - df['Applied Date']).dt.days
     return df
 
 # LOAD SECOND JSON DATA
