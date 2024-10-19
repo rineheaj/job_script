@@ -22,6 +22,8 @@ def show_second_page():
     df['Response Date'] = pd.to_datetime(df['Response Date'], format='%Y-%m-%d')
     df['Applied Date'] = pd.to_datetime(df['Applied Date'], format='%Y-%m-%d')
 
+    st.write(df[['Response Date', 'Applied Date', 'Response Time']])
+
     #---Calculate avg response time---
     df['Response Time'] = (df['Response Date'] - df['Applied Date']).dt.days
     avg_response_time = df['Response Time'].dropna().mean()
