@@ -84,10 +84,10 @@ def update_job_details(df):
         if job_data["Status"] != new_status:
             job_data["Status"] = new_status
         
-        
         if job_data["Response Date"] != str(new_response_date):
             job_data["Response Date"] = str(new_response_date)
             applied_date = pd.to_datetime(job_data["Applied Date"])
+            new_response_date = pd.Timestamp(new_response_date)  # Convert to Timestamp
             days_to_response = (new_response_date - applied_date).days
             job_data["Days to Response"] = days_to_response
         
@@ -95,6 +95,7 @@ def update_job_details(df):
         commit_second_page_to_github(st.session_state["second_page_job_data"])
         
         st.sidebar.success(f"Details updated for {job_to_update}")
+
 
 
 def delete_job(df):
