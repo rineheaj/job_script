@@ -2,7 +2,7 @@ import streamlit as st
 from second_page_sidebars import second_page_sidebar
 from config import set_title_w_param
 from data_utils import create_second_page_job_table
-
+import pandas as pd
 
 
 def show_second_page():
@@ -18,7 +18,11 @@ def show_second_page():
     st.write("### Applications by Status")
     st.bar_chart(status_counts)
     
-    # Calculate 'Response Time' only for rows where 'Response Date' is not NaN
+    #---Convert dfs---
+    df['Response Date'] = pd.to_datetime(df['Response Date'], format='%m-%d-%Y')
+    df['Applied Date'] = pd.to_datetime(df['Applied Date'], format='%m-%d-%Y')
+
+    #---Calculate avg response time---
     df['Response Time'] = (df['Response Date'] - df['Applied Date']).dt.days
     avg_response_time = df['Response Time'].dropna().mean()
     st.metric(label="Average Response Time (days)", value=f"{avg_response_time:.2f}")
