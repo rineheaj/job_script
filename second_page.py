@@ -11,6 +11,8 @@ def show_second_page():
     
     df = create_second_page_job_table()
     
+    st.dataframe(df)
+
     total_applications = len(df)
     st.metric(label="Total Applications", value=total_applications)
     
