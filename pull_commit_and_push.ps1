@@ -7,7 +7,7 @@ Set-Location $jobPath
 
 git pull origin master --no-edit
 
-$currentDateTime = Get-Date -Format "MM-dd-YYYY HH:mm:ss"
+$currentDateTime = Get-Date -Format "MM-dd-yyyy HH:mm:ss"
 
 $changedFiles = git status --porcelain | ForEach-Object { $_.Substring(3) } | Out-String
 
