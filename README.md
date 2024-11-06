@@ -57,9 +57,9 @@ The app includes the following visualizations:
 - **Bar Chart 1**: Shows the count of applications per company.
 - **Bar Chart 2**: Displays the count of applications per status.
 - **Stacked Area Chart**: Shows the cumulative number of applications over time, grouped by status.
--**3D Scatter Plot**: Visualizes job application data in a 3D space.
--**Network Graph**: Visualizes relationships in job application data.
--**Word Cloud**: Displays the most frequent words in job application data.
+- **3D Scatter Plot**: Visualizes job application data in a 3D space.
+- **Network Graph**: Visualizes relationships in job application data.
+- **Word Cloud**: Displays the most frequent words in job application data.
 ## 🤝 Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
