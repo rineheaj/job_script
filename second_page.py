@@ -56,7 +56,7 @@ def show_second_page():
     st.metric(
         label="Average Response Time (days)", 
         value=f"{avg_response_time:.2f}",
-        delta=1.5
+        delta=0.9
         )
 
     second_page_sidebar(df=df)
