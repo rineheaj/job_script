@@ -12,6 +12,7 @@ def show_second_page():
         
     )
     st.markdown("<h1>This page provides various statistics about your job applications.</h1>")
+
     
 
     df = create_second_page_job_table()
