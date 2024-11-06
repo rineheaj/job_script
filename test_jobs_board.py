@@ -1,20 +1,20 @@
 import streamlit as st
 from second_page import show_second_page
-from charts import (
+from charts import(
     create_charts,
     display_charts,
     create_line_chart,
     create_stacked_area_chart,
     create_word_cloud,
     create_3d_scatter_plot,
-    create_network_graph
+    create_network_graph,
 )
 from config import set_title, set_table_title
 from style import style_df
 from data_utils import(
     load_json_data, 
     load_second_page_json_data, 
-    create_job_table
+    create_job_table,
 )
 from sidebars import sidebar
 
