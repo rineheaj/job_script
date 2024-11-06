@@ -32,7 +32,7 @@ def show_second_page():
     st.dataframe(df)
     st.metric(label="Total Applications", value=total_applications)
     st.write("### Applications by Status")
-    st.bar_chart(status_counts)
+    st.area_chart(status_counts)
 
 
     #---Display the subset of the DataFrame with formatted dates---
