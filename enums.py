@@ -17,3 +17,14 @@ class Fonts(Enum):
     HEADER = ("Helvetica", 20) 
     SUBHEADER = ("Helvetica", 16) 
     BODY = ("Helvetica", 12)
+
+
+
+
+
+
+
+class Styles(Enum):
+    TITLE_ALIGNMENT = "center"
+    TITLE_PADDING = "60px"
+    TITLE_COLOR = "blue"

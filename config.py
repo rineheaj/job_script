@@ -1,5 +1,5 @@
 import streamlit as st
-from enums import Colors
+from enums import Colors, Styles, Fonts
 
 GITHUB_REPO = st.secrets['github']['repo']
 GITHUB_FILE_PATH = st.secrets['github']['file_path']
@@ -24,17 +24,20 @@ def set_title():
 
 #SET TITLE WITH PARAM
 def set_title_w_param(page_title, color):
-    title = st.markdown(
-        f'''
-        <style>
-        .title {{text-align: center; padding: 60px}}
-        color: {Colors.BLUE.value};
-        </style>
-        <h1 class="title">{page_title}</h1>
-        ''',
+    title_style = f'''
+    <style>
+    .title {{
+        text-align: {Styles.TITLE_ALIGNMENT.value};
+        padding: {Styles.TITLE_PADDING.value};
+        color: {Styles.TITLE_COLOR.value};
+    }}
+    </style>
+    '''
+    title_html = f'<h1 class="title">{page_title}</h1>'
+    st.markdown(
+        title_style + title_html, 
         unsafe_allow_html=True
     )
-    return title
 
 
     
