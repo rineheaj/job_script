@@ -20,11 +20,12 @@ def set_title():
     return title
 
 #SET TITLE WITH PARAM
-def set_title_w_param(page_title):
+def set_title_w_param(page_title, color):
     title = st.markdown(
         f'''
         <style>
         .title {{text-align: center; padding: 60px}}
+        
         </style>
         <h1 class="title">{page_title}</h1>
         ''',

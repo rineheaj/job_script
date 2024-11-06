@@ -7,7 +7,10 @@ import pandas as pd
 
 def show_second_page():
     
-    set_title_w_param(page_title='📊 Job Application Statistics')
+    set_title_w_param(
+        page_title='📊 Job Application Statistics',
+        
+    )
     st.write("This page provides various statistics about your job applications.")
     
 
