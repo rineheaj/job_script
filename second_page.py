@@ -42,7 +42,7 @@ def show_second_page():
     st.metric(
         label="Total Applications", 
         value=total_applications,
-        delta=2
+        delta=5
         )
     st.write("### Applications by Status")
     st.area_chart(status_counts)
