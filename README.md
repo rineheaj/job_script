@@ -17,15 +17,15 @@
 ## 🛠️ Installation
 
 1. **Clone the repository**:
-   \`\`\`sh
+   ```sh
    git clone https://github.com/yourusername/job_script.git
    cd job_script
-   \`\`\`
+   ```
 
 2. **Install the required dependencies**:
-   \`\`\`sh
+   ```sh
    pip install -r requirements.txt
-   \`\`\`
+   ```
 
 3. **Set up Streamlit credentials**:
    If you are running the app locally, no credentials are required. If you are deploying the app, use the Streamlit interface to add your GitHub credentials.
