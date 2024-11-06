@@ -39,7 +39,7 @@ def create_charts(df):
     applications_over_time = df.groupby([df["Applied Date"].dt.to_period("M"), "Status"]).size().reset_index(name="Count")
     applications_over_time.columns = ["Applied Date", "Status", "Count"]
     chart2 = (
-        alt.JupyterChart(applications_over_time)
+        alt.Chart(applications_over_time)
         .mark_bar()
         .encode(
             x="Applied Date",
