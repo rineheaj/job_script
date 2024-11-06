@@ -34,19 +34,23 @@ def create_charts(df):
         )
     )
 
-    # TEST BAR CHART 2
+    # APPLICATIONS OVER TIME BAR CHART
+    df["Applied Date"] = pd.to_datetime(df["Applied Date"])
+    applications_over_time = df.groupby([df["Applied Date"].dt.to_period("M"), "Status"]).size().reset_index(name="Count")
+    applications_over_time.columns = ["Applied Date", "Status", "Count"]
     chart2 = (
-        alt.Chart(df)
+        alt.Chart(applications_over_time)
         .mark_bar()
         .encode(
-            x="Position",
-            y="count()",
+            x="Applied Date",
+            y="Count",
             color="Status",
-            tooltip=["Company", "Position", "Status"],
+            tooltip=["Applied Date", "Status", "Count"],
         )
     )
 
     return chart1, chart, chart2
+
 
 
 def create_line_chart(df):
