@@ -5,7 +5,7 @@ GITHUB_REPO = st.secrets['github']['repo']
 GITHUB_FILE_PATH = st.secrets['github']['file_path']
 GITHUB_TOKEN = st.secrets['github']['token']
 GITHUB_FILE_PATH_SECOND_JSON = st.secrets['github']['second_page_json_path']
-
+from icecream import ic
 
 
 # SET TITLE
@@ -38,6 +38,7 @@ def set_title_w_param(page_title):
         title_style + title_html, 
         unsafe_allow_html=True
     )
+    ic(title_style + title_html)
 
 
     
