@@ -39,7 +39,11 @@ def show_second_page():
 
     #---Display DataFrame and metrics---
     st.dataframe(df)
-    st.metric(label="Total Applications", value=total_applications)
+    st.metric(
+        label="Total Applications", 
+        value=total_applications,
+        delta=2
+        )
     st.write("### Applications by Status")
     st.area_chart(status_counts)
 
