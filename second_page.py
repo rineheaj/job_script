@@ -3,7 +3,7 @@ from second_page_sidebars import second_page_sidebar
 from config import set_title_w_param
 from data_utils import create_second_page_job_table, convert_to_string
 import pandas as pd
-
+from icecream import ic
 
 def show_second_page():
     
@@ -11,7 +11,7 @@ def show_second_page():
         page_title='📊 Job Application Statistics',
         
     )
-    st.write("This page provides various statistics about your job applications.")
+    st.markdown("**This page provides various statistics about your job applications.**")
     
 
     df = create_second_page_job_table()
