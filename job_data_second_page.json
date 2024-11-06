@@ -25,139 +25,34 @@
     },
     {
         "Applied Date": "2024-10-10",
-        "Company": "Test Co 4",
-        "Position": "Tester 4",
-        "Status": "Interviewing",
-        "Response Date": "2024-10-15",
-        "Days to Response": 5
-    },
-    {
-        "Applied Date": "2024-10-07",
-        "Company": "Test Co 5",
-        "Position": "Tester 5",
-        "Status": "Applied",
-        "Response Date": "2024-10-21",
-        "Days to Response": 14
-    },
-    {
-        "Applied Date": "2024-10-19",
-        "Company": "Test Co 6",
-        "Position": "Tester 6",
-        "Status": "Applied",
-        "Response Date": null,
-        "Days to Response": null
-    },
-    {
-        "Applied Date": "2024-10-10",
-        "Company": "Test Co 7",
-        "Position": "Tester 7",
-        "Status": "Interviewing",
-        "Response Date": "2024-10-12",
-        "Days to Response": 2
-    },
-    {
-        "Applied Date": "2024-10-12",
-        "Company": "Test Co 8",
-        "Position": "Tester 8",
-        "Status": "Rejected",
-        "Response Date": "2024-10-18",
-        "Days to Response": 6
-    },
-    {
-        "Applied Date": "2024-10-09",
-        "Company": "Test Co 9",
-        "Position": "Tester 9",
-        "Status": "Applied",
-        "Response Date": "2024-10-20",
-        "Days to Response": 11
-    },
-    {
-        "Applied Date": "2024-10-11",
-        "Company": "Test Co 10",
-        "Position": "Tester 10",
-        "Status": "Rejected",
-        "Response Date": "2024-10-15",
-        "Days to Response": 4
-    },
-    {
-        "Applied Date": "2024-10-14",
-        "Company": "Test Co 11",
-        "Position": "Tester 11",
-        "Status": "Applied",
-        "Response Date": null,
-        "Days to Response": null
-    },
-    {
-        "Applied Date": "2024-10-16",
-        "Company": "Test Co 12",
-        "Position": "Tester 12",
-        "Status": "Interviewing",
-        "Response Date": "2024-10-20",
-        "Days to Response": 4
-    },
-    {
-        "Applied Date": "2024-10-10",
-        "Company": "Test Co 13",
+        "Company": "Test co 13",
         "Position": "Tester 13",
         "Status": "Interviewing",
         "Response Date": "2024-10-11",
-        "Days to Response": 1
+        "Days to Response": null
     },
     {
         "Applied Date": "2024-10-08",
-        "Company": "Test Co 14",
+        "Company": "Test co 14",
         "Position": "Tester 14",
         "Status": "Interviewing",
         "Response Date": "2024-10-12",
-        "Days to Response": 4
+        "Days to Response": null
     },
     {
         "Applied Date": "2024-10-07",
-        "Company": "Test Co 15",
+        "Company": "Test co 15",
         "Position": "Tester 15",
         "Status": "Applied",
         "Response Date": "2024-10-21",
         "Days to Response": 14
     },
     {
-        "Applied Date": "2024-10-05",
-        "Company": "Test Co 16",
-        "Position": "Tester 16",
-        "Status": "Rejected",
-        "Response Date": "2024-10-15",
-        "Days to Response": 10
-    },
-    {
-        "Applied Date": "2024-10-03",
-        "Company": "Test Co 17",
-        "Position": "Tester 17",
-        "Status": "Interviewing",
-        "Response Date": "2024-10-09",
-        "Days to Response": 6
-    },
-    {
         "Applied Date": "2024-10-19",
-        "Company": "Test Co 18",
-        "Position": "Tester 18",
+        "Company": "Test co 22",
+        "Position": "Tester 22",
         "Status": "Applied",
-        "Response Date": "2024-10-22",
-        "Days to Response": 3
-    },
-    {
-        "Applied Date": "2024-10-06",
-        "Company": "Test Co 19",
-        "Position": "Tester 19",
-        "Status": "Rejected",
-        "Response Date": "2024-10-10",
-        "Days to Response": 4
-    },
-    {
-        "Applied Date": "2024-10-18",
-        "Company": "Test Co 20",
-        "Position": "Tester 20",
-        "Status": "Applied",
-        "Response Date": null,
+        "Response Date": "2024-10-24",
         "Days to Response": null
     }
-    
 ]
