@@ -4,6 +4,9 @@ from config import set_title_w_param
 from data_utils import create_second_page_job_table, convert_to_string
 import pandas as pd
 from icecream import ic
+from enums import Colors
+
+
 
 def show_second_page():
     
@@ -45,7 +48,7 @@ def show_second_page():
         delta=5
         )
     st.write("### Applications by Status")
-    st.area_chart(status_counts, color='brown')
+    st.area_chart(status_counts, color=Colors.WARNING.value)
 
 
     #---Display the subset of the DataFrame with formatted dates---
