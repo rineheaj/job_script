@@ -53,25 +53,27 @@ def create_charts(df):
 
     return chart1, chart, chart2,
 
-def create_test_heatmap(df):
+
+def create_line_chart(df):
     # Convert Applied Date to datetime
     df['Applied Date'] = pd.to_datetime(df['Applied Date'])
     
-    # Extract day of the week and week of the month
-    df['Day of Week'] = df['Applied Date'].dt.day_name()
-    df['Week of Month'] = df['Applied Date'].dt.isocalendar().week
+    # Aggregate data by Applied Date
+    agg_df = df.groupby(['Applied Date']).size().reset_index(name='Count')
     
-    # Create the heatmap
-    heatmap = alt.Chart(df).mark_rect().encode(
-        x=alt.X('Week of Month:O', title='Week of Month'),
-        y=alt.Y('Day of Week:O', title='Day of Week', sort=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']),
-        color=alt.Color('count():Q', title='Number of Applications'),
-        tooltip=['Week of Month', 'Day of Week', 'count()']
+    # Create the line chart
+    line_chart = alt.Chart(agg_df).mark_line().encode(
+        x=alt.X('Applied Date:T', title='Date Applied'),
+        y=alt.Y('Count:Q', title='Number of Applications'),
+        tooltip=['Applied Date:T', 'Count:Q']
     ).properties(
-        title='Job Applications Heatmap'
+        title='Job Applications Over Time'
     )
     
-    st.pyplot(heatmap)
+    st.pyplot(line_chart)
+
+
+
 
 
 
