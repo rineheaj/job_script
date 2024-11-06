@@ -54,7 +54,7 @@ def create_charts(df):
     return chart1, chart, chart2,
 
 
-def create_line_chart(df):
+def create_test_line_chart(df):
     # Convert Applied Date to datetime
     df['Applied Date'] = pd.to_datetime(df['Applied Date'])
     

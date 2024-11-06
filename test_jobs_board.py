@@ -8,7 +8,7 @@ from charts import(
     create_word_cloud,
     create_3d_scatter_plot,
     create_network_graph,
-    create_test_heatmap,
+    create_test_line_chart,
 )
 from config import set_title, set_table_title
 from style import style_df
@@ -57,8 +57,8 @@ if page == "Main Page":
     
     display_charts(test_pie_chart, stacked_chart1)
 
-    if st.button('Gen Heatmap'):
-        create_test_heatmap(df=df)
+    if st.button('Gen Line Chart'):
+        create_test_line_chart(df=df)
 
     if st.button('Gen 3D Scatter Plat'):
         three_dee_fig = create_3d_scatter_plot(df=df)
