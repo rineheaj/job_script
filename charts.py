@@ -92,7 +92,7 @@ def create_stacked_area_chart(df):
     )
     return stacked_area_chart
 
-
+@st.cache_data(ttl=300)
 def create_word_cloud(df):
 
     text = " ".join(df["Company"].dropna().tolist())
@@ -106,12 +106,12 @@ def create_word_cloud(df):
     plt.axis("off")
     st.pyplot(plt)
 
-
+@st.cache_data(ttl=300)
 def create_3d_scatter_plot(df):
     fig = px.scatter_3d(df, x="Applied Date", y="Company", z="Status", color="Status")
     return fig
 
-
+@st.cache_data(ttl=300)
 def create_network_graph(df):
     G = nx.Graph()
 
