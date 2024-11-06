@@ -12,7 +12,7 @@ def show_second_page():
         
     )
     st.markdown(
-        "<h2>This page provides various statistics about your job applications.</h2>",
+        "<h3>This page provides various statistics about your job applications.</h3>",
         unsafe_allow_html=True
             
     )
