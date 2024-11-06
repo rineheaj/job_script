@@ -54,28 +54,6 @@ def create_charts(df):
     return chart1, chart, chart2,
 
 
-def create_test_line_chart(df):
-    # Convert Applied Date to datetime
-    df['Applied Date'] = pd.to_datetime(df['Applied Date'])
-    
-    # Aggregate data by Applied Date
-    agg_df = df.groupby(['Applied Date']).size().reset_index(name='Count')
-    
-    # Create the line chart
-    line_chart = alt.Chart(agg_df).mark_line().encode(
-        x=alt.X('Applied Date:T', title='Date Applied'),
-        y=alt.Y('Count:Q', title='Number of Applications'),
-        tooltip=['Applied Date:T', 'Count:Q']
-    ).properties(
-        title='Job Applications Over Time'
-    )
-    
-    st.plotly_chart(line_chart)
-
-
-
-
-
 
 
 def create_line_chart(df):
