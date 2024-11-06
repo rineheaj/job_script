@@ -436,5 +436,305 @@
         "Company": "AutoExperts",
         "Position": "Automotive Technician",
         "Status": "Offer"
+    },
+    {
+        "Applied Date": "2024-11-06",
+        "Company": "AutoDynamics",
+        "Position": "Mechanical Engineer",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-11-07",
+        "Company": "MediCorp",
+        "Position": "Clinical Researcher",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-11-08",
+        "Company": "EcoPower",
+        "Position": "Environmental Analyst",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-11-09",
+        "Company": "NextGen Tech",
+        "Position": "IT Consultant",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-11-10",
+        "Company": "BlueSky Innovations",
+        "Position": "Product Designer",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-11-11",
+        "Company": "FinancePros",
+        "Position": "Account Manager",
+        "Status": "Offer Received"
+    },
+    {
+        "Applied Date": "2024-11-12",
+        "Company": "Solaris Energy",
+        "Position": "Project Coordinator",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-11-13",
+        "Company": "EduLabs",
+        "Position": "Curriculum Developer",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-11-14",
+        "Company": "QuickLogistics",
+        "Position": "Operations Analyst",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-11-15",
+        "Company": "HomeSense",
+        "Position": "Retail Consultant",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-11-16",
+        "Company": "CityPlan",
+        "Position": "Urban Planner",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-11-17",
+        "Company": "TechNest",
+        "Position": "Software Engineer",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-11-18",
+        "Company": "AquaFlow",
+        "Position": "Environmental Scientist",
+        "Status": "Offer Received"
+    },
+    {
+        "Applied Date": "2024-11-19",
+        "Company": "VisionHealth",
+        "Position": "Health Data Analyst",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-11-20",
+        "Company": "TravelConnect",
+        "Position": "Customer Service Manager",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-11-21",
+        "Company": "InsightPartners",
+        "Position": "Market Analyst",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-11-22",
+        "Company": "FreshHarvest",
+        "Position": "Supply Chain Coordinator",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-11-23",
+        "Company": "WorkSpace",
+        "Position": "Office Manager",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-11-24",
+        "Company": "CodeHub",
+        "Position": "Junior Developer",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-11-25",
+        "Company": "MetroMedia",
+        "Position": "Content Strategist",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-11-26",
+        "Company": "BuildSmart",
+        "Position": "Construction Manager",
+        "Status": "Offer Received"
+    },
+    {
+        "Applied Date": "2024-11-27",
+        "Company": "FinanceNow",
+        "Position": "Financial Analyst",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-11-28",
+        "Company": "GeoSolutions",
+        "Position": "GIS Specialist",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-11-29",
+        "Company": "AppNest",
+        "Position": "Mobile App Developer",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-11-30",
+        "Company": "OmniRetail",
+        "Position": "Sales Consultant",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-12-01",
+        "Company": "CareFirst",
+        "Position": "Patient Coordinator",
+        "Status": "Offer Received"
+    },
+    {
+        "Applied Date": "2024-12-02",
+        "Company": "QuickTrack",
+        "Position": "Logistics Analyst",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-12-03",
+        "Company": "HealthPlus",
+        "Position": "Healthcare Consultant",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-12-04",
+        "Company": "FutureTech",
+        "Position": "Product Developer",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-12-05",
+        "Company": "EnviroBuild",
+        "Position": "Sustainability Engineer",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-12-06",
+        "Company": "MarketTrend",
+        "Position": "Data Analyst",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-12-07",
+        "Company": "Pathway Learning",
+        "Position": "Instructional Designer",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-12-08",
+        "Company": "InnoFlex",
+        "Position": "Project Manager",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-12-09",
+        "Company": "EcoWorks",
+        "Position": "Environmental Technician",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-12-10",
+        "Company": "SmartMoney",
+        "Position": "Investment Associate",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-12-11",
+        "Company": "AquaLife",
+        "Position": "Water Quality Analyst",
+        "Status": "Offer Received"
+    },
+    {
+        "Applied Date": "2024-12-12",
+        "Company": "SafeNet",
+        "Position": "Cybersecurity Analyst",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-12-13",
+        "Company": "BetterHomes",
+        "Position": "Interior Designer",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-12-14",
+        "Company": "DataPros",
+        "Position": "Database Manager",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-12-15",
+        "Company": "OptiHealth",
+        "Position": "Wellness Coach",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-12-16",
+        "Company": "TechWave",
+        "Position": "IT Support Specialist",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-12-17",
+        "Company": "LifeLabs",
+        "Position": "Lab Technician",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-12-18",
+        "Company": "FoodNetwork",
+        "Position": "Supply Chain Analyst",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-12-19",
+        "Company": "BridgeBuild",
+        "Position": "Civil Engineer",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-12-20",
+        "Company": "TravelLine",
+        "Position": "Travel Consultant",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-12-21",
+        "Company": "InspireMedia",
+        "Position": "Media Planner",
+        "Status": "Offer Received"
+    },
+    {
+        "Applied Date": "2024-12-22",
+        "Company": "BrightFuture",
+        "Position": "Social Worker",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-12-23",
+        "Company": "TechVerse",
+        "Position": "Network Engineer",
+        "Status": "Interview Scheduled"
+    },
+    {
+        "Applied Date": "2024-12-24",
+        "Company": "MarketMakers",
+        "Position": "Digital Marketer",
+        "Status": "Awaiting Response"
+    },
+    {
+        "Applied Date": "2024-12-25",
+        "Company": "CityEnergy",
+        "Position": "Energy Consultant",
+        "Status": "Rejected"
     }
 ]
