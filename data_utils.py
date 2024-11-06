@@ -46,7 +46,8 @@ def create_second_page_job_entry(app_date, co, pos, status, response_date=None):
 def create_second_page_job_table():
     df = pd.DataFrame(st.session_state['second_page_job_data'])
     df = convert_to_datetime(df, ['Applied Date', 'Response Date'])
-    df['Days to response'] = (df['Response Date'] - df['Applied Date']).dt.days
+    if 'Days to response' in df.columns:
+        df['Days to response'] = (df['Response Date'] - df['Applied Date']).dt.days
     return df
 
 def convert_to_datetime(df, columns):
