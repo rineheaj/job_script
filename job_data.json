@@ -316,5 +316,125 @@
         "Company": "DataWrangler",
         "Position": "Big Data Engineer",
         "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-10-25",
+        "Company": "Tech Innovators",
+        "Position": "Software Engineer",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-10-26",
+        "Company": "Global Solutions",
+        "Position": "Project Manager",
+        "Status": "Interviewing"
+    },
+    {
+        "Applied Date": "2024-10-27",
+        "Company": "Creative Minds",
+        "Position": "Graphic Designer",
+        "Status": "Offer"
+    },
+    {
+        "Applied Date": "2024-10-28",
+        "Company": "HealthTech",
+        "Position": "Data Analyst",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-10-29",
+        "Company": "EduWorld",
+        "Position": "Curriculum Developer",
+        "Status": "Interviewing"
+    },
+    {
+        "Applied Date": "2024-10-30",
+        "Company": "FinancePros",
+        "Position": "Financial Advisor",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-10-31",
+        "Company": "RetailGiant",
+        "Position": "Store Manager",
+        "Status": "Offer"
+    },
+    {
+        "Applied Date": "2024-11-01",
+        "Company": "Green Energy",
+        "Position": "Environmental Engineer",
+        "Status": "Interviewing"
+    },
+    {
+        "Applied Date": "2024-11-02",
+        "Company": "AutoTech",
+        "Position": "Mechanical Engineer",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-11-03",
+        "Company": "Foodies Inc.",
+        "Position": "Chef",
+        "Status": "Offer"
+    },
+    {
+        "Applied Date": "2024-11-04",
+        "Company": "TravelCo",
+        "Position": "Travel Agent",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-11-05",
+        "Company": "MediaHouse",
+        "Position": "Journalist",
+        "Status": "Interviewing"
+    },
+    {
+        "Applied Date": "2024-11-06",
+        "Company": "BuildIt",
+        "Position": "Construction Manager",
+        "Status": "Offer"
+    },
+    {
+        "Applied Date": "2024-11-07",
+        "Company": "TechSavvy",
+        "Position": "IT Support Specialist",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-11-08",
+        "Company": "HealthFirst",
+        "Position": "Nurse",
+        "Status": "Interviewing"
+    },
+    {
+        "Applied Date": "2024-11-09",
+        "Company": "EduTech",
+        "Position": "Educational Consultant",
+        "Status": "Applied"
+    },
+    {
+        "Applied Date": "2024-11-10",
+        "Company": "FinanceCorp",
+        "Position": "Accountant",
+        "Status": "Offer"
+    },
+    {
+        "Applied Date": "2024-11-11",
+        "Company": "RetailMasters",
+        "Position": "Sales Associate",
+        "Status": "Interviewing"
+    },
+    {
+        "Applied Date": "2024-11-12",
+        "Company": "GreenWorld",
+        "Position": "Sustainability Specialist",
+        "Status": "Rejected"
+    },
+    {
+        "Applied Date": "2024-11-13",
+        "Company": "AutoExperts",
+        "Position": "Automotive Technician",
+        "Status": "Offer"
     }
 ]
