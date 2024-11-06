@@ -7,6 +7,7 @@ GITHUB_TOKEN = st.secrets['github']['token']
 GITHUB_FILE_PATH_SECOND_JSON = st.secrets['github']['second_page_json_path']
 from icecream import ic
 
+ic.enable()
 
 # SET TITLE
 def set_title():
