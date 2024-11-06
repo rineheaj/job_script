@@ -158,6 +158,429 @@
         "Status": "Offer",
         "Response Date": "2024-10-30",
         "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-10-09",
+        "Company": "Tech Solutions",
+        "Position": "Software Developer",
+        "Status": "Applied",
+        "Response Date": "2024-10-25",
+        "Days to Response": 16
+    },
+    {
+        "Applied Date": "2024-10-10",
+        "Company": "Innovative Systems",
+        "Position": "Data Scientist",
+        "Status": "Interviewing",
+        "Response Date": "2024-10-15",
+        "Days to Response": 5
+    },
+    {
+        "Applied Date": "2024-10-11",
+        "Company": "Creative Designs",
+        "Position": "Graphic Designer",
+        "Status": "Rejected",
+        "Response Date": "2024-10-20",
+        "Days to Response": 9
+    },
+    {
+        "Applied Date": "2024-10-12",
+        "Company": "HealthCare Inc.",
+        "Position": "Nurse",
+        "Status": "Interviewing",
+        "Response Date": "2024-10-14",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-10-13",
+        "Company": "EduTech",
+        "Position": "Educational Consultant",
+        "Status": "Applied",
+        "Response Date": "2024-10-27",
+        "Days to Response": 14
+    },
+    {
+        "Applied Date": "2024-10-14",
+        "Company": "FinancePros",
+        "Position": "Financial Analyst",
+        "Status": "Offer",
+        "Response Date": "2024-10-18",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-10-15",
+        "Company": "RetailGiant",
+        "Position": "Store Manager",
+        "Status": "Rejected",
+        "Response Date": "2024-10-22",
+        "Days to Response": 7
+    },
+    {
+        "Applied Date": "2024-10-16",
+        "Company": "Green Energy",
+        "Position": "Environmental Engineer",
+        "Status": "Interviewing",
+        "Response Date": "2024-10-20",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-10-17",
+        "Company": "AutoTech",
+        "Position": "Mechanical Engineer",
+        "Status": "Applied",
+        "Response Date": "2024-10-30",
+        "Days to Response": 13
+    },
+    {
+        "Applied Date": "2024-10-18",
+        "Company": "Foodies Inc.",
+        "Position": "Chef",
+        "Status": "Offer",
+        "Response Date": "2024-10-21",
+        "Days to Response": 3
+    },
+    {
+        "Applied Date": "2024-10-19",
+        "Company": "TravelCo",
+        "Position": "Travel Agent",
+        "Status": "Applied",
+        "Response Date": "2024-10-28",
+        "Days to Response": 9
+    },
+    {
+        "Applied Date": "2024-10-20",
+        "Company": "MediaHouse",
+        "Position": "Journalist",
+        "Status": "Interviewing",
+        "Response Date": "2024-10-23",
+        "Days to Response": 3
+    },
+    {
+        "Applied Date": "2024-10-21",
+        "Company": "BuildIt",
+        "Position": "Construction Manager",
+        "Status": "Offer",
+        "Response Date": "2024-10-25",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-10-22",
+        "Company": "TechSavvy",
+        "Position": "IT Support Specialist",
+        "Status": "Rejected",
+        "Response Date": "2024-10-26",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-10-23",
+        "Company": "HealthFirst",
+        "Position": "Nurse",
+        "Status": "Interviewing",
+        "Response Date": "2024-10-25",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-10-24",
+        "Company": "EduTech",
+        "Position": "Educational Consultant",
+        "Status": "Applied",
+        "Response Date": "2024-10-30",
+        "Days to Response": 6
+    },
+    {
+        "Applied Date": "2024-10-25",
+        "Company": "FinanceCorp",
+        "Position": "Accountant",
+        "Status": "Offer",
+        "Response Date": "2024-10-28",
+        "Days to Response": 3
+    },
+    {
+        "Applied Date": "2024-10-26",
+        "Company": "RetailMasters",
+        "Position": "Sales Associate",
+        "Status": "Interviewing",
+        "Response Date": "2024-10-29",
+        "Days to Response": 3
+    },
+    {
+        "Applied Date": "2024-10-27",
+        "Company": "GreenWorld",
+        "Position": "Sustainability Specialist",
+        "Status": "Rejected",
+        "Response Date": "2024-10-31",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-10-28",
+        "Company": "AutoExperts",
+        "Position": "Automotive Technician",
+        "Status": "Offer",
+        "Response Date": "2024-10-30",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-10-25",
+        "Company": "FinanceCorp",
+        "Position": "Accountant",
+        "Status": "Offer",
+        "Response Date": "2024-10-28",
+        "Days to Response": 3
+    },
+    {
+        "Applied Date": "2024-10-26",
+        "Company": "RetailMasters",
+        "Position": "Sales Associate",
+        "Status": "Interviewing",
+        "Response Date": "2024-10-29",
+        "Days to Response": 3
+    },
+    {
+        "Applied Date": "2024-10-27",
+        "Company": "GreenWorld",
+        "Position": "Sustainability Specialist",
+        "Status": "Rejected",
+        "Response Date": "2024-10-31",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-10-28",
+        "Company": "TechSavvy",
+        "Position": "Software Engineer",
+        "Status": "Applied",
+        "Response Date": "2024-11-02",
+        "Days to Response": 5
+    },
+    {
+        "Applied Date": "2024-10-29",
+        "Company": "MedLife",
+        "Position": "Healthcare Analyst",
+        "Status": "Offer",
+        "Response Date": "2024-11-03",
+        "Days to Response": 5
+    },
+    {
+        "Applied Date": "2024-10-30",
+        "Company": "EdTech Innovations",
+        "Position": "Instructional Designer",
+        "Status": "Interviewing",
+        "Response Date": "2024-11-01",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-11-01",
+        "Company": "BrightFuture",
+        "Position": "Career Counselor",
+        "Status": "Rejected",
+        "Response Date": "2024-11-05",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-11-02",
+        "Company": "Green Energy Solutions",
+        "Position": "Environmental Engineer",
+        "Status": "Interviewing",
+        "Response Date": "2024-11-06",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-11-03",
+        "Company": "AutoNation",
+        "Position": "Supply Chain Coordinator",
+        "Status": "Applied",
+        "Response Date": "2024-11-10",
+        "Days to Response": 7
+    },
+    {
+        "Applied Date": "2024-11-04",
+        "Company": "DigitalWorld",
+        "Position": "Content Strategist",
+        "Status": "Rejected",
+        "Response Date": "2024-11-07",
+        "Days to Response": 3
+    },
+    {
+        "Applied Date": "2024-11-05",
+        "Company": "CityWorks",
+        "Position": "Urban Planner",
+        "Status": "Applied",
+        "Response Date": null,
+        "Days to Response": null
+    },
+    {
+        "Applied Date": "2024-11-06",
+        "Company": "HealthFirst",
+        "Position": "Medical Coder",
+        "Status": "Offer",
+        "Response Date": "2024-11-10",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-11-07",
+        "Company": "TechWorld",
+        "Position": "Backend Developer",
+        "Status": "Interviewing",
+        "Response Date": "2024-11-11",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-11-08",
+        "Company": "BrightIdeas",
+        "Position": "Creative Director",
+        "Status": "Rejected",
+        "Response Date": "2024-11-12",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-11-09",
+        "Company": "SmartSolutions",
+        "Position": "Data Scientist",
+        "Status": "Interviewing",
+        "Response Date": "2024-11-13",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-11-10",
+        "Company": "BuildIt",
+        "Position": "Project Manager",
+        "Status": "Applied",
+        "Response Date": "2024-11-14",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-11-11",
+        "Company": "EduNation",
+        "Position": "Academic Advisor",
+        "Status": "Rejected",
+        "Response Date": "2024-11-15",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-11-12",
+        "Company": "GlobalMarkets",
+        "Position": "Financial Analyst",
+        "Status": "Offer",
+        "Response Date": "2024-11-17",
+        "Days to Response": 5
+    },
+    {
+        "Applied Date": "2024-11-13",
+        "Company": "CloudNet",
+        "Position": "Cloud Engineer",
+        "Status": "Applied",
+        "Response Date": null,
+        "Days to Response": null
+    },
+    {
+        "Applied Date": "2024-11-14",
+        "Company": "TravelQuest",
+        "Position": "Logistics Coordinator",
+        "Status": "Rejected",
+        "Response Date": "2024-11-16",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-11-15",
+        "Company": "AgriGrowth",
+        "Position": "Agricultural Scientist",
+        "Status": "Interviewing",
+        "Response Date": "2024-11-18",
+        "Days to Response": 3
+    },
+    {
+        "Applied Date": "2024-11-16",
+        "Company": "BlueOcean",
+        "Position": "Marine Biologist",
+        "Status": "Applied",
+        "Response Date": "2024-11-21",
+        "Days to Response": 5
+    },
+    {
+        "Applied Date": "2024-11-17",
+        "Company": "EcoWorld",
+        "Position": "Environmental Scientist",
+        "Status": "Rejected",
+        "Response Date": "2024-11-19",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-11-18",
+        "Company": "TechLab",
+        "Position": "UI/UX Designer",
+        "Status": "Interviewing",
+        "Response Date": "2024-11-20",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-11-19",
+        "Company": "DataSecure",
+        "Position": "Cybersecurity Analyst",
+        "Status": "Applied",
+        "Response Date": null,
+        "Days to Response": null
+    },
+    {
+        "Applied Date": "2024-11-20",
+        "Company": "AutoMotion",
+        "Position": "Mechanical Engineer",
+        "Status": "Offer",
+        "Response Date": "2024-11-24",
+        "Days to Response": 4
+    },
+    {
+        "Applied Date": "2024-11-21",
+        "Company": "SalesForcey",
+        "Position": "Sales Executive",
+        "Status": "Interviewing",
+        "Response Date": "2024-11-23",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-11-22",
+        "Company": "MarketWiz",
+        "Position": "Digital Marketer",
+        "Status": "Rejected",
+        "Response Date": "2024-11-25",
+        "Days to Response": 3
+    },
+    {
+        "Applied Date": "2024-11-23",
+        "Company": "FinanceGurus",
+        "Position": "Auditor",
+        "Status": "Applied",
+        "Response Date": null,
+        "Days to Response": null
+    },
+    {
+        "Applied Date": "2024-11-24",
+        "Company": "BrightGreen",
+        "Position": "Forestry Technician",
+        "Status": "Offer",
+        "Response Date": "2024-11-26",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-11-25",
+        "Company": "PublicHealthPros",
+        "Position": "Health Consultant",
+        "Status": "Interviewing",
+        "Response Date": "2024-11-27",
+        "Days to Response": 2
+    },
+    {
+        "Applied Date": "2024-11-26",
+        "Company": "TechSolutions",
+        "Position": "IT Support Specialist",
+        "Status": "Applied",
+        "Response Date": null,
+        "Days to Response": null
+    },
+    {
+        "Applied Date": "2024-11-27",
+        "Company": "NextGen Innovations",
+        "Position": "Product Manager",
+        "Status": "Rejected",
+        "Response Date": "2024-11-29",
+        "Days to Response": 2
     }
-    
 ]
