@@ -49,7 +49,30 @@ def create_charts(df):
         )
     )
 
-    return chart1, chart, chart2
+
+
+    return chart1, chart, chart2,
+
+def create_test_heatmap(df):
+    # Convert Applied Date to datetime
+    df['Applied Date'] = pd.to_datetime(df['Applied Date'])
+    
+    # Extract day of the week and week of the month
+    df['Day of Week'] = df['Applied Date'].dt.day_name()
+    df['Week of Month'] = df['Applied Date'].dt.isocalendar().week
+    
+    # Create the heatmap
+    heatmap = alt.Chart(df).mark_rect().encode(
+        x=alt.X('Week of Month:O', title='Week of Month'),
+        y=alt.Y('Day of Week:O', title='Day of Week', sort=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']),
+        color=alt.Color('count():Q', title='Number of Applications'),
+        tooltip=['Week of Month', 'Day of Week', 'count()']
+    ).properties(
+        title='Job Applications Heatmap'
+    )
+    
+    st.pyplot(heatmap)
+
 
 
 
