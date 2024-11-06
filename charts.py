@@ -39,7 +39,7 @@ def create_charts(df):
         alt.Chart(df)
         .mark_bar()
         .encode(
-            x="Status",
+            x="Position",
             y="count()",
             color="Status",
             tooltip=["Company", "Position", "Status"],
