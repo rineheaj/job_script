@@ -11,7 +11,12 @@ def show_second_page():
         page_title='📊 Job Application Statistics',
         
     )
-    st.markdown("<h1>This page provides various statistics about your job applications.</h1>")
+    st.markdown(
+        "<h1>This page provides various statistics about your job applications.</h1>",
+        unsafe_allow_html=True
+            
+    )
+
 
     
 
