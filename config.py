@@ -23,7 +23,7 @@ def set_title():
     return title
 
 #SET TITLE WITH PARAM
-def set_title_w_param(page_title, color):
+def set_title_w_param(page_title):
     title_style = f'''
     <style>
     .title {{
