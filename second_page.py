@@ -45,7 +45,7 @@ def show_second_page():
         delta=5
         )
     st.write("### Applications by Status")
-    st.area_chart(status_counts)
+    st.area_chart(status_counts, color='brown')
 
 
     #---Display the subset of the DataFrame with formatted dates---
