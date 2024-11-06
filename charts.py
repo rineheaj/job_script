@@ -70,7 +70,7 @@ def create_test_line_chart(df):
         title='Job Applications Over Time'
     )
     
-    st.pyplot(line_chart)
+    return line_chart
 
 
 
