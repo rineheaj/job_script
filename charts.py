@@ -70,7 +70,7 @@ def create_test_line_chart(df):
         title='Job Applications Over Time'
     )
     
-    return line_chart
+    st.plotly_chart(line_chart)
 
 
 

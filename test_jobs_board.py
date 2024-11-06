@@ -58,8 +58,7 @@ if page == "Main Page":
     display_charts(test_pie_chart, stacked_chart1)
 
     if st.button('Gen Line Chart'):
-        test_line = create_test_line_chart(df=df)
-        st.plotly_chart(test_line)
+        create_test_line_chart(df)
 
     if st.button('Gen 3D Scatter Plat'):
         three_dee_fig = create_3d_scatter_plot(df=df)
