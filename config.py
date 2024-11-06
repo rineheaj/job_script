@@ -1,5 +1,5 @@
 import streamlit as st
-
+from enums import Colors
 
 GITHUB_REPO = st.secrets['github']['repo']
 GITHUB_FILE_PATH = st.secrets['github']['file_path']
@@ -28,7 +28,7 @@ def set_title_w_param(page_title, color):
         f'''
         <style>
         .title {{text-align: center; padding: 60px}}
-        
+        color: {Colors.BLUE.value}
         </style>
         <h1 class="title">{page_title}</h1>
         ''',
